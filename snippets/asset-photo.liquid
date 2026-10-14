@@ -1,0 +1,2 @@
+{%- comment -%} Photo bundled in the theme assets. Usage: render 'asset-photo', file: 'tlx-wings.jpg', alt: 'Wings', width: 1360, height: 1020, eager: false {%- endcomment -%}
+<img src="{{ file | asset_url }}" alt="{{ alt | escape }}" width="{{ width | default: 1360 }}" height="{{ height | default: 1020 }}"{% unless eager %} loading="lazy"{% endunless %} decoding="async">

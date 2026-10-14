@@ -1,0 +1,249 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "rating_text": "4.8 on Google · 1,271 reviews"
+      }
+    },
+    "deals": {
+      "type": "deals",
+      "blocks": {
+        "lunch": {
+          "type": "deal",
+          "settings": {
+            "title": "LUNCH AT THE LAB",
+            "when": "Every open day · 11:30 AM–3 PM",
+            "lines": "2 tacos | $9.99\n3 tacos | $12.99\nBurrito or bowl | $12.99",
+            "note": "Includes chips, salsa & a fountain drink. Beef & seafood +50¢ per taco, +$1.50 burrito or bowl.",
+            "color": "yellow"
+          }
+        },
+        "tuesday": {
+          "type": "deal",
+          "settings": {
+            "title": "TACO TUESDAY & HAPPY HOUR",
+            "when": "Dine-in · All day Tuesday · 3–6 PM Wed–Sun",
+            "lines": "Chicken & veggie tacos | $3\nBeef & seafood tacos | $4\nMargaritas | $5",
+            "note": "Single tacos only. Dine-in only.",
+            "color": "coral"
+          }
+        },
+        "ayce": {
+          "type": "deal",
+          "settings": {
+            "title": "ALL YOU CAN EAT",
+            "when": "Wednesday & Sunday · Dine-in",
+            "big_price": "$24.99",
+            "lines": "Unlimited tacos | ✓\nChips & salsa | ✓",
+            "note": "Per person, dine-in only. Order up to 3 tacos per round at the counter.",
+            "color": "green"
+          }
+        }
+      },
+      "block_order": [
+        "lunch",
+        "tuesday",
+        "ayce"
+      ],
+      "settings": {
+        "heading": "DEALS AT THE LAB",
+        "kicker": "In-store specials"
+      }
+    },
+    "favorites": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "fan-favorites",
+        "heading": "FAN FAVORITES",
+        "kicker": "What Boca orders most",
+        "limit": 10
+      }
+    },
+    "combo": {
+      "type": "combo-banner",
+      "settings": {}
+    },
+    "apps": {
+      "type": "delivery-apps",
+      "settings": {}
+    },
+    "catering": {
+      "type": "catering-cta",
+      "settings": {
+        "image_asset": "tlx-taco-bar-catering.jpg"
+      }
+    },
+    "location": {
+      "type": "location-hours",
+      "settings": {
+        "second_url": "https://www.tacolabsfl.com"
+      }
+    },
+    "story": {
+      "type": "image-with-text",
+      "settings": {
+        "button_link": "/pages/about",
+        "image_asset": "tlx-veggie-tacos.jpg",
+        "image_alt": "Veggie tacos with guacamole, chips and salsa",
+        "kicker": "MADE FRESH DAILY",
+        "heading": "QUALITY TACOS, MADE FAST",
+        "text": "<p>Same high-quality tacos and margaritas as Taco Labs, in a quick counter-service shop. Everything is made from scratch every day: nothing canned, high-quality meats, mostly organic ingredients, minimal seed oils and no palm oil.</p><p>Twenty tacos from around the world, from birria with a 24-hour consommé to Korean BBQ steak and New Delhi tandoori. Easy parking right out front.</p>"
+      }
+    },
+    "reviews": {
+      "type": "reviews",
+      "blocks": {
+        "r_google": {
+          "type": "rating",
+          "settings": {
+            "rating": "4.8",
+            "source": "Google",
+            "count": "1,271 reviews"
+          }
+        },
+        "r_uber": {
+          "type": "rating",
+          "settings": {
+            "rating": "4.5",
+            "source": "Uber Eats",
+            "count": "1,500+ ratings"
+          }
+        },
+        "rv1": {
+          "type": "review",
+          "settings": {
+            "quote": "We ended up getting there around 9:10 on a Wednesday and it was all you can eat tacos! The food was fresh and very satisfying! Love the Vegan options, you must try the Jackfruit Birra Taco! We will definitely be back soon!",
+            "name": "Overcoming Lupus, Local Guide",
+            "source": "Google",
+            "stars": 5
+          }
+        },
+        "rv2": {
+          "type": "review",
+          "settings": {
+            "quote": "",
+            "name": "",
+            "stars": 5
+          }
+        },
+        "rv3": {
+          "type": "review",
+          "settings": {
+            "quote": "",
+            "name": "",
+            "stars": 5
+          }
+        }
+      },
+      "block_order": [
+        "r_google",
+        "r_uber",
+        "rv1",
+        "rv2",
+        "rv3"
+      ],
+      "settings": {
+        "link": "https://www.google.com/maps/search/?api=1&query=Taco+Labs+1956+NE+5th+Ave+Suite+3+Boca+Raton+FL+33431"
+      }
+    },
+    "gallery": {
+      "type": "photo-gallery",
+      "blocks": {
+        "g1": {
+          "type": "photo",
+          "settings": {
+            "image_asset": "tlx-tacos-red-margarita.jpg",
+            "caption": "Tacos & a margarita"
+          }
+        },
+        "g2": {
+          "type": "photo",
+          "settings": {
+            "caption": "The dining room",
+            "image_asset": "tlx-dining-room.jpg"
+          }
+        },
+        "g3": {
+          "type": "photo",
+          "settings": {
+            "caption": "Order at the counter",
+            "image_asset": "tlx-counter.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ],
+      "settings": {}
+    },
+    "instagram": {
+      "type": "instagram",
+      "blocks": {
+        "p1": {
+          "type": "post",
+          "settings": {
+            "image_asset": "tlx-tacos-rice-beans.jpg"
+          }
+        },
+        "p2": {
+          "type": "post",
+          "settings": {
+            "image_asset": "tlx-wings.jpg"
+          }
+        },
+        "p3": {
+          "type": "post",
+          "settings": {
+            "image_asset": "tlx-margaritas.jpg"
+          }
+        },
+        "p4": {
+          "type": "post",
+          "settings": {
+            "image_asset": "tlx-fish-taco.jpg"
+          }
+        },
+        "p5": {
+          "type": "post",
+          "settings": {
+            "image_asset": "tlx-jarritos.jpg"
+          }
+        },
+        "p6": {
+          "type": "post",
+          "settings": {
+            "image_asset": "tlx-rose-mural.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6"
+      ],
+      "settings": {
+        "handle": "@tacolabs_fl",
+        "profile_url": "https://www.instagram.com/tacolabs_fl/"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "deals",
+    "story",
+    "favorites",
+    "reviews",
+    "combo",
+    "gallery",
+    "instagram",
+    "apps",
+    "catering",
+    "location"
+  ]
+}

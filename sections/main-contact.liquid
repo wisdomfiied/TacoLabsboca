@@ -1,0 +1,21 @@
+<section class="section">
+  <div class="wrap">
+    <h1 class="page-title">{{ page.title }}</h1>
+    {%- render 'stripe' -%}
+    {%- if page.content != blank -%}<div class="rte mt">{{ page.content }}</div>{%- endif -%}
+    <div class="mt" style="max-width:640px">
+      {%- form 'contact' -%}
+        {%- if form.posted_successfully? -%}<p class="form-msg form-msg--ok">Thanks! We got your message and will reply soon.</p>{%- endif -%}
+        {%- if form.errors -%}<p class="form-msg form-msg--err">{{ form.errors | default_errors }}</p>{%- endif -%}
+        <div class="field"><label for="c-name">Name</label><input id="c-name" type="text" name="contact[name]" autocomplete="name" required></div>
+        <div class="field"><label for="c-email">Email</label><input id="c-email" type="email" name="contact[email]" autocomplete="email" required></div>
+        <div class="field"><label for="c-phone">Phone</label><input id="c-phone" type="tel" name="contact[phone]" autocomplete="tel"></div>
+        <div class="field"><label for="c-msg">Message</label><textarea id="c-msg" name="contact[body]" rows="5" required></textarea></div>
+        <button class="btn btn--coral" type="submit">Send</button>
+      {%- endform -%}
+    </div>
+  </div>
+</section>
+{% schema %}
+{"name": "Contact form", "settings": [], "enabled_on": {"templates": ["page"]}}
+{% endschema %}

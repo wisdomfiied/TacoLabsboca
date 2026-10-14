@@ -1,0 +1,12 @@
+<section class="section">
+  <div class="wrap">
+    <h1 class="page-title">Order Online</h1>
+    <div class="notice mt">
+      <p>Food orders go through our online ordering so they print straight to the kitchen with your tortilla and topping choices.</p>
+      {%- render 'order-buttons', size: 'lg' -%}
+    </div>
+  </div>
+</section>
+{% schema %}
+{"name": "Cart", "settings": [], "enabled_on": {"templates": ["cart"]}}
+{% endschema %}

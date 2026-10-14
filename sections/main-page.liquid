@@ -1,0 +1,10 @@
+<section class="section">
+  <div class="wrap">
+    <h1 class="page-title">{{ page.title }}</h1>
+    {%- render 'stripe' -%}
+    {%- if page.content != blank -%}<div class="rte mt">{{ page.content }}</div>{%- endif -%}
+  </div>
+</section>
+{% schema %}
+{"name": "Page content", "settings": [], "enabled_on": {"templates": ["page"]}}
+{% endschema %}

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="{{ settings.color_ink }}">
+  <link rel="canonical" href="{{ canonical_url }}">
+  {%- if settings.favicon != blank -%}
+    <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 64, height: 64 }}">
+  {%- else -%}
+    <link rel="icon" type="image/png" href="{{ 'favicon-64.png' | asset_url }}">
+  {%- endif -%}
+  <title>{{ page_title }}{% unless page_title contains shop.name %} | {{ shop.name }}{% endunless %}</title>
+  {%- if page_description -%}<meta name="description" content="{{ page_description | escape }}">{%- endif -%}
+  <meta property="og:site_name" content="{{ shop.name }}">
+  <meta property="og:title" content="{{ page_title | escape }}">
+  <meta property="og:type" content="{% if request.page_type == 'product' %}product{% else %}website{% endif %}">
+  <meta property="og:url" content="{{ canonical_url }}">
+  {%- if page_description -%}<meta property="og:description" content="{{ page_description | escape }}">{%- endif -%}
+  {%- if settings.share_image != blank -%}
+    <meta property="og:image" content="https:{{ settings.share_image | image_url: width: 1200 }}">
+  {%- else -%}
+    <meta property="og:image" content="https:{{ 'social-share-1200x630.png' | asset_url }}">
+  {%- endif -%}
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+    @font-face{font-family:Anton;font-weight:400;font-display:swap;src:url({{ 'anton-latin-400-normal.woff2' | asset_url }}) format('woff2')}
+    @font-face{font-family:'Work Sans';font-weight:400;font-display:swap;src:url({{ 'work-sans-latin-400-normal.woff2' | asset_url }}) format('woff2')}
+    @font-face{font-family:'Work Sans';font-weight:500;font-display:swap;src:url({{ 'work-sans-latin-500-normal.woff2' | asset_url }}) format('woff2')}
+    @font-face{font-family:'Work Sans';font-weight:600;font-display:swap;src:url({{ 'work-sans-latin-600-normal.woff2' | asset_url }}) format('woff2')}
+    @font-face{font-family:'Work Sans';font-weight:700;font-display:swap;src:url({{ 'work-sans-latin-700-normal.woff2' | asset_url }}) format('woff2')}
+  </style>
+  {{ 'anton-latin-400-normal.woff2' | asset_url | preload_tag: as: 'font', type: 'font/woff2', crossorigin: true }}
+  <style>
+    :root {
+      --ink: {{ settings.color_ink }};
+      --paper: {{ settings.color_paper }};
+      --coral: {{ settings.color_coral }};
+      --yellow: {{ settings.color_yellow }};
+      --green: {{ settings.color_green }};
+      --coral-text: {{ settings.color_coral_text }};
+      --muted: #3f3f3f;
+      --rule: #cfcfcf;
+    }
+  </style>
+  {{ 'base.css' | asset_url | stylesheet_tag }}
+  {%- render 'schema-restaurant' -%}
+  {{ content_for_header }}
+</head>
+<body class="template-{{ request.page_type | handle }}">
+  <a class="skip-link" href="#main">Skip to content</a>
+  {% sections 'header-group' %}
+  <main id="main" role="main">
+    {{ content_for_layout }}
+  </main>
+  {% sections 'footer-group' %}
+</body>
+</html>

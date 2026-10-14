@@ -1,0 +1,21 @@
+<section class="section">
+  <div class="wrap">
+    <h1 class="page-title">{{ collection.title }}</h1>
+    {%- render 'stripe' -%}
+    {%- if collection.description != blank -%}<div class="rte mt">{{ collection.description }}</div>{%- endif -%}
+    {%- paginate collection.products by 48 -%}
+      <div class="items mt">
+        {%- for product in collection.products -%}
+          {%- render 'menu-item', product: product, show_link: false -%}
+        {%- else -%}
+          <p>No items here yet.</p>
+        {%- endfor -%}
+      </div>
+      {%- if paginate.pages > 1 -%}<div class="pagination">{{ paginate | default_pagination }}</div>{%- endif -%}
+    {%- endpaginate -%}
+    <div class="mt">{%- render 'order-buttons', size: 'lg' -%}</div>
+  </div>
+</section>
+{% schema %}
+{"name": "Collection", "settings": [], "enabled_on": {"templates": ["collection"]}}
+{% endschema %}

@@ -1,0 +1,54 @@
+{%- capture full_address -%}{{ settings.address_street }}, {{ settings.address_city }}, FL {{ settings.address_zip }}{%- endcapture -%}
+<section class="section" id="location">
+  <div class="wrap">
+    <div class="section-head"><h2>{{ section.settings.heading }}</h2><span class="kicker">{{ section.settings.kicker }}</span></div>
+    <div class="loc">
+      <div class="loc__card loc__card--main">
+        <span class="kicker-tag">YOU ARE HERE</span>
+        <h3>Taco Labs Express Boca</h3>
+        <p class="loc__type">Quick counter service · tacos & margaritas · easy parking out front</p>
+        <p><strong>{{ full_address }}</strong><br><a href="{% render 'tel', phone: settings.phone %}">{{ settings.phone }}</a></p>
+        <table class="hours" aria-label="Opening hours, Boca">
+          <tr><td>Monday</td><td>Closed</td></tr>
+          <tr><td>Tuesday – Saturday</td><td>11:30 AM – 10 PM</td></tr>
+          <tr><td>Sunday</td><td>11:30 AM – 9 PM</td></tr>
+        </table>
+        <div class="btn-row mt">
+          <a class="btn btn--ink" href="https://www.google.com/maps/search/?api=1&query={{ full_address | url_encode }}" target="_blank" rel="noopener">Get Directions</a>
+          {%- if settings.order_url != blank -%}<a class="btn btn--coral" href="{{ settings.order_url }}" target="_blank" rel="noopener">Order Pickup</a>{%- endif -%}
+        </div>
+      </div>
+      {%- if section.settings.show_second -%}
+      <div class="loc__card loc__card--alt">
+        <span class="kicker-tag kicker-tag--yellow">ALSO VISIT</span>
+        <h3>{{ section.settings.second_name }}</h3>
+        <p class="loc__type">{{ section.settings.second_type }}</p>
+        <p><strong>{{ section.settings.second_address }}</strong>{%- if section.settings.second_phone != blank -%}<br><a href="{% render 'tel', phone: section.settings.second_phone %}">{{ section.settings.second_phone }}</a>{%- endif -%}</p>
+        <p>{{ section.settings.second_text }}</p>
+        <div class="btn-row mt">
+          <a class="btn btn--yellow" href="https://www.google.com/maps/search/?api=1&query={{ section.settings.second_address | url_encode }}" target="_blank" rel="noopener">Get Directions</a>
+          {%- if section.settings.second_url != blank -%}<a class="btn btn--outline" href="{{ section.settings.second_url }}" target="_blank" rel="noopener">{{ section.settings.second_link_label }}</a>{%- endif -%}
+        </div>
+      </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Locations & hours",
+  "settings": [
+    {"type": "text", "id": "heading", "label": "Heading", "default": "FIND THE LAB"},
+    {"type": "text", "id": "kicker", "label": "Small text", "default": "Two ways to Taco Labs"},
+    {"type": "checkbox", "id": "show_second", "label": "Show Kitchen & Bar location", "default": true},
+    {"type": "text", "id": "second_name", "label": "Second location name", "default": "Taco Labs Kitchen & Bar"},
+    {"type": "text", "id": "second_type", "label": "Second location description", "default": "Full service · servers · full bar"},
+    {"type": "text", "id": "second_address", "label": "Second location address", "default": "7619 N State Road 7, Parkland, FL"},
+    {"type": "text", "id": "second_phone", "label": "Second location phone", "default": "(754) 812-1221"},
+    {"type": "textarea", "id": "second_text", "label": "Second location text", "default": "Our full-service restaurant in Parkland. Sit down, order from your server and enjoy the full bar."},
+    {"type": "url", "id": "second_url", "label": "Second location website"},
+    {"type": "text", "id": "second_link_label", "label": "Website button label", "default": "Visit Kitchen & Bar"}
+  ],
+  "presets": [{"name": "Locations & hours"}]
+}
+{% endschema %}

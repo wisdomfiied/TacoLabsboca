@@ -1,0 +1,11 @@
+{%- comment -%} Renders menu badges from product tags. Usage: render 'badges', product: product {%- endcomment -%}
+{%- for tag in product.tags -%}
+  {%- case tag -%}
+    {%- when 'Bestseller' -%}<span class="badge badge--hot">#1 Bestseller</span>
+    {%- when 'Fan Favorite' -%}<span class="badge badge--hot">Fan Favorite</span>
+    {%- when 'New' -%}<span class="badge badge--new">New</span>
+    {%- when 'Vegetarian' -%}<span class="badge badge--line" title="Vegetarian">V</span>
+    {%- when 'Gluten-Friendly' -%}<span class="badge badge--line" title="Gluten-friendly on a corn tortilla">GF*</span>
+    {%- when 'In-Store Only' -%}<span class="badge badge--line">In-store</span>
+  {%- endcase -%}
+{%- endfor -%}

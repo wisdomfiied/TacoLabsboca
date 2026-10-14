@@ -1,0 +1,25 @@
+{
+  "current": {
+    "order_url": "https://toast.app/r/tacolabsboca1956/order/r-8c9862f4-f083-42c3-b63a-71433cac8f3c?diningOption=takeout",
+    "ubereats_url": "https://www.ubereats.com/store/taco-labs/XatwzPcqXH-ub-f5dtfMAQ",
+    "doordash_url": "https://www.doordash.com/store/taco-labs-boca-raton-25880873/",
+    "catering_url": "https://catering.tacolabsfl.com/pages/catering-menu",
+    "address_street": "1956 NE 5th Ave, Suite 3",
+    "address_city": "Boca Raton",
+    "address_zip": "33431",
+    "phone": "(561) 961-0585",
+    "hours_text": "Tue–Sat 11:30 AM–10 PM\nSun 11:30 AM–9 PM\nClosed Monday",
+    "color_ink": "#141414",
+    "color_paper": "#ffffff",
+    "color_coral": "#f87f84",
+    "color_yellow": "#ffb844",
+    "color_green": "#6dc55e",
+    "color_coral_text": "#c2373f",
+    "instagram_url": "https://www.instagram.com/tacolabs_fl/",
+    "tiktok_url": "https://www.tiktok.com/@tacolabsfl",
+    "facebook_url": "https://www.facebook.com/p/Taco-Labs-Boca-61552158317501/"
+  },
+  "presets": {
+    "Default": {}
+  }
+}

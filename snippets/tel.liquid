@@ -1,0 +1,3 @@
+{%- comment -%} Outputs a tel: href for a US phone. Usage: render 'tel', phone: settings.phone {%- endcomment -%}
+{%- assign digits = phone | remove: ' ' | remove: '(' | remove: ')' | remove: '-' | remove: '.' | remove: '+' -%}
+{%- if digits.size == 10 -%}tel:+1{{ digits }}{%- else -%}tel:+{{ digits }}{%- endif -%}

@@ -1,0 +1,230 @@
+{
+  "sections": {
+    "combo": {
+      "type": "combo-banner",
+      "settings": {}
+    },
+    "menu": {
+      "type": "menu",
+      "blocks": {
+        "cat_taco_combos": {
+          "type": "category",
+          "settings": {
+            "collection": "taco-combos",
+            "title": "TACO COMBOS",
+            "price_label": "$14.99",
+            "note": "Any 3 tacos + chips & salsa. Beef & seafood tacos +50¢ each.",
+            "color": "yellow",
+            "product_type": "Taco Combos"
+          }
+        },
+        "cat_chicken_tacos": {
+          "type": "category",
+          "settings": {
+            "collection": "chicken-tacos",
+            "title": "CHICKEN TACOS",
+            "price_label": "$4.49",
+            "note": "",
+            "color": "coral",
+            "product_type": "Chicken Tacos"
+          }
+        },
+        "cat_veggie_tacos": {
+          "type": "category",
+          "settings": {
+            "collection": "veggie-tacos",
+            "title": "VEGGIE TACOS",
+            "price_label": "$3.99",
+            "note": "",
+            "color": "green",
+            "product_type": "Veggie Tacos"
+          }
+        },
+        "cat_beef_seafood_tacos": {
+          "type": "category",
+          "settings": {
+            "collection": "beef-seafood-tacos",
+            "title": "BEEF & SEAFOOD TACOS",
+            "price_label": "$4.99",
+            "note": "",
+            "color": "coral",
+            "product_type": "Beef & Seafood Tacos"
+          }
+        },
+        "cat_burritos_bowls": {
+          "type": "category",
+          "settings": {
+            "collection": "burritos-bowls",
+            "title": "BURRITOS & BOWLS",
+            "price_label": "",
+            "note": "Pick any filling. Chicken & veggie $13.99 · Beef & seafood $15.49. Burritos include chips & salsa.",
+            "color": "yellow",
+            "product_type": "Burritos & Bowls"
+          }
+        },
+        "cat_quesadillas_specials": {
+          "type": "category",
+          "settings": {
+            "collection": "quesadillas-specials",
+            "title": "QUESADILLAS & SPECIALS",
+            "price_label": "",
+            "note": "Quesadilla: chicken & veggie $12.99 · beef & seafood $13.99.",
+            "color": "coral",
+            "product_type": "Quesadillas & Specials"
+          }
+        },
+        "cat_chips_dips": {
+          "type": "category",
+          "settings": {
+            "collection": "chips-dips",
+            "title": "CHIPS & DIPS",
+            "price_label": "",
+            "note": "",
+            "color": "green",
+            "product_type": "Chips & Dips"
+          }
+        },
+        "cat_wings": {
+          "type": "category",
+          "settings": {
+            "collection": "wings",
+            "title": "WINGS",
+            "price_label": "",
+            "note": "Lemon Pepper · Hot Honey · Sticky BBQ · Mango Habanero · Mango BBQ · Plain",
+            "color": "yellow",
+            "product_type": "Wings"
+          }
+        },
+        "cat_sides": {
+          "type": "category",
+          "settings": {
+            "collection": "sides",
+            "title": "SIDES",
+            "price_label": "",
+            "note": "",
+            "color": "green",
+            "product_type": "Sides"
+          }
+        },
+        "cat_desserts": {
+          "type": "category",
+          "settings": {
+            "collection": "desserts",
+            "title": "DESSERTS",
+            "price_label": "",
+            "note": "",
+            "color": "coral",
+            "product_type": "Desserts"
+          }
+        },
+        "cat_kids": {
+          "type": "category",
+          "settings": {
+            "collection": "kids",
+            "title": "KIDS · 12 & UNDER",
+            "price_label": "",
+            "note": "With chips and a kids drink: lemonade, apple juice or water.",
+            "color": "yellow",
+            "product_type": "Kids"
+          }
+        },
+        "cat_drinks": {
+          "type": "category",
+          "settings": {
+            "collection": "drinks",
+            "title": "DRINKS",
+            "price_label": "",
+            "note": "Fountain soda is self-serve in-store.",
+            "color": "green",
+            "product_type": "Drinks"
+          }
+        },
+        "cat_margaritas": {
+          "type": "category",
+          "settings": {
+            "collection": "margaritas",
+            "title": "MARGARITAS",
+            "price_label": "$7.99",
+            "note": "Any flavor, anytime. $5 during Taco Tuesday & Happy Hour (dine-in). 21+.",
+            "color": "coral",
+            "product_type": "Margaritas"
+          }
+        }
+      },
+      "block_order": [
+        "cat_taco_combos",
+        "cat_chicken_tacos",
+        "cat_veggie_tacos",
+        "cat_beef_seafood_tacos",
+        "cat_burritos_bowls",
+        "cat_quesadillas_specials",
+        "cat_chips_dips",
+        "cat_wings",
+        "cat_sides",
+        "cat_desserts",
+        "cat_kids",
+        "cat_drinks",
+        "cat_margaritas"
+      ],
+      "settings": {}
+    },
+    "deals": {
+      "type": "deals",
+      "blocks": {
+        "lunch": {
+          "type": "deal",
+          "settings": {
+            "title": "LUNCH AT THE LAB",
+            "when": "Every open day · 11:30 AM–3 PM",
+            "lines": "2 tacos | $9.99\n3 tacos | $12.99\nBurrito or bowl | $12.99",
+            "note": "Includes chips, salsa & a fountain drink. Beef & seafood +50¢ per taco, +$1.50 burrito or bowl.",
+            "color": "yellow"
+          }
+        },
+        "tuesday": {
+          "type": "deal",
+          "settings": {
+            "title": "TACO TUESDAY & HAPPY HOUR",
+            "when": "Dine-in · All day Tuesday · 3–6 PM Wed–Sun",
+            "lines": "Chicken & veggie tacos | $3\nBeef & seafood tacos | $4\nMargaritas | $5",
+            "note": "Single tacos only. Dine-in only.",
+            "color": "coral"
+          }
+        },
+        "ayce": {
+          "type": "deal",
+          "settings": {
+            "title": "ALL YOU CAN EAT",
+            "when": "Wednesday & Sunday · Dine-in",
+            "big_price": "$24.99",
+            "lines": "Unlimited tacos | ✓\nChips & salsa | ✓",
+            "note": "Per person, dine-in only. Order up to 3 tacos per round at the counter.",
+            "color": "green"
+          }
+        }
+      },
+      "block_order": [
+        "lunch",
+        "tuesday",
+        "ayce"
+      ],
+      "settings": {
+        "heading": "DEALS AT THE LAB",
+        "kicker": "In-store specials",
+        "dark": true
+      }
+    },
+    "catering": {
+      "type": "catering-cta",
+      "settings": {
+        "image_asset": "tlx-taco-bar-catering.jpg"
+      }
+    }
+  },
+  "order": [
+    "menu",
+    "combo",
+    "deals",
+    "catering"
+  ]
+}

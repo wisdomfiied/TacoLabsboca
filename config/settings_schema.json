@@ -1,0 +1,145 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Taco Labs Express",
+    "theme_version": "1.0.0",
+    "theme_author": "Taco Labs",
+    "theme_documentation_url": "https://boca.tacolabsfl.com",
+    "theme_support_url": "https://boca.tacolabsfl.com/pages/contact"
+  },
+  {
+    "name": "Ordering links",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Paste your Toast Online Ordering link here. Every Order Pickup button on the site uses it."
+      },
+      {
+        "type": "url",
+        "id": "order_url",
+        "label": "Toast Online Ordering (pickup) link"
+      },
+      {
+        "type": "url",
+        "id": "ubereats_url",
+        "label": "Uber Eats store link"
+      },
+      {
+        "type": "url",
+        "id": "doordash_url",
+        "label": "DoorDash store link"
+      },
+      {
+        "type": "url",
+        "id": "catering_url",
+        "label": "Catering site link"
+      }
+    ]
+  },
+  {
+    "name": "Restaurant info",
+    "settings": [
+      {
+        "type": "text",
+        "id": "address_street",
+        "label": "Street address",
+        "default": "1956 NE 5th Ave, Suite 3"
+      },
+      {
+        "type": "text",
+        "id": "address_city",
+        "label": "City",
+        "default": "Boca Raton"
+      },
+      {
+        "type": "text",
+        "id": "address_zip",
+        "label": "ZIP",
+        "default": "33431"
+      },
+      {
+        "type": "text",
+        "id": "phone",
+        "label": "Phone",
+        "default": "(561) 961-0585"
+      },
+      {
+        "type": "textarea",
+        "id": "hours_text",
+        "label": "Hours (footer)",
+        "default": "Tue–Sat 11:30 AM–10 PM\nSun 11:30 AM–9 PM\nClosed Monday"
+      }
+    ]
+  },
+  {
+    "name": "Social",
+    "settings": [
+      {
+        "type": "url",
+        "id": "instagram_url",
+        "label": "Instagram"
+      },
+      {
+        "type": "url",
+        "id": "facebook_url",
+        "label": "Facebook"
+      },
+      {
+        "type": "url",
+        "id": "tiktok_url",
+        "label": "TikTok"
+      }
+    ]
+  },
+  {
+    "name": "Brand",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon (optional, square)"
+      },
+      {
+        "type": "image_picker",
+        "id": "share_image",
+        "label": "Social share image (optional, 1200×630)"
+      },
+      {
+        "type": "color",
+        "id": "color_ink",
+        "label": "Ink (black)",
+        "default": "#141414"
+      },
+      {
+        "type": "color",
+        "id": "color_paper",
+        "label": "Background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "color_coral",
+        "label": "Neon coral",
+        "default": "#f87f84"
+      },
+      {
+        "type": "color",
+        "id": "color_yellow",
+        "label": "Neon yellow",
+        "default": "#ffb844"
+      },
+      {
+        "type": "color",
+        "id": "color_green",
+        "label": "Neon green",
+        "default": "#6dc55e"
+      },
+      {
+        "type": "color",
+        "id": "color_coral_text",
+        "label": "Coral for text and links",
+        "default": "#c2373f"
+      }
+    ]
+  }
+]

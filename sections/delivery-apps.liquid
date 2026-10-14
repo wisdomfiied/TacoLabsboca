@@ -1,0 +1,21 @@
+<section class="section--tight">
+  <div class="wrap">
+    <div class="apps">
+      <div>
+        <h2>{{ section.settings.title }}</h2>
+        <p class="item__desc">{{ section.settings.text }}</p>
+      </div>
+      {%- render 'order-buttons' -%}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Order options",
+  "settings": [
+    {"type": "text", "id": "title", "label": "Title", "default": "PICKUP OR DELIVERY"},
+    {"type": "text", "id": "text", "label": "Text", "default": "Pickup orders get our in-store prices. Delivery through Uber Eats and DoorDash."}
+  ],
+  "presets": [{"name": "Order options"}]
+}
+{% endschema %}

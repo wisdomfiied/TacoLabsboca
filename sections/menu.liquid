@@ -1,0 +1,72 @@
+<section class="section">
+  {%- paginate collections.all.products by 100 -%}
+  {%- assign all_products = collections.all.products -%}
+  <div class="wrap">
+    <div class="section-head"><h2>{{ section.settings.heading }}</h2><span class="kicker">{{ section.settings.kicker }}</span></div>
+    <nav class="menu-jump" aria-label="Menu categories">
+      {%- for block in section.blocks -%}
+        {%- assign c = block.settings.collection -%}
+        <a href="#cat-{{ block.id }}">{{ block.settings.title | default: c.title }}</a>
+      {%- endfor -%}
+    </nav>
+    {%- for block in section.blocks -%}
+      {%- assign c = block.settings.collection -%}
+      <div class="menu-cat menu-cat--{{ block.settings.color }}" id="cat-{{ block.id }}" {{ block.shopify_attributes }}>
+        <div class="menu-cat__bar">
+          <h2>{{ block.settings.title | default: c.title }}</h2>
+          {%- if block.settings.price_label != blank -%}<span class="menu-cat__price">{{ block.settings.price_label }}</span>{%- endif -%}
+        </div>
+        {%- if block.settings.note != blank -%}<p class="menu-cat__note">{{ block.settings.note }}</p>{%- endif -%}
+        {%- if c != blank and c.products_count > 0 -%}
+          <div class="items">
+            {%- for product in c.products -%}
+              {%- render 'menu-item', product: product, show_link: false -%}
+            {%- endfor -%}
+          </div>
+        {%- else -%}
+          {%- assign found = 0 -%}
+          <div class="items">
+            {%- for product in all_products -%}
+              {%- if product.type == block.settings.product_type -%}
+                {%- assign found = found | plus: 1 -%}
+                {%- render 'menu-item', product: product, show_link: false -%}
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+          {%- if found == 0 and request.design_mode -%}<p class="item__desc">No items found. Pick a collection or check the product type.</p>{%- endif -%}
+        {%- endif -%}
+      </div>
+    {%- endfor -%}
+    <div class="notice">
+      <p><strong>Every taco comes on a flour tortilla.</strong> Ask for corn at no charge. GF* = gluten-friendly on a corn tortilla. Korean BBQ (soy), breaded and battered items contain gluten. V = vegetarian (contains dairy).</p>
+      <p style="margin:0">Prices are in-store and pickup prices. Uber Eats and DoorDash prices are higher.</p>
+    </div>
+    <div class="mt">{%- render 'order-buttons', size: 'lg' -%}</div>
+  </div>
+  {%- endpaginate -%}
+</section>
+{% schema %}
+{
+  "name": "Menu",
+  "settings": [
+    {"type": "text", "id": "heading", "label": "Heading", "default": "THE MENU"},
+    {"type": "text", "id": "kicker", "label": "Small text", "default": "20 tacos · mix & match"},
+    {"type": "checkbox", "id": "link_items", "label": "Link each item to its own page (not used)", "default": false}
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category",
+      "settings": [
+        {"type": "collection", "id": "collection", "label": "Collection"},
+        {"type": "text", "id": "product_type", "label": "Product type (used if the collection is empty)", "info": "Must match the product type exactly, e.g. Chicken Tacos"},
+        {"type": "text", "id": "title", "label": "Title (optional)"},
+        {"type": "text", "id": "price_label", "label": "Price label (optional)", "info": "e.g. $4.49 for every chicken taco"},
+        {"type": "text", "id": "note", "label": "Note (optional)"},
+        {"type": "select", "id": "color", "label": "Accent", "default": "yellow", "options": [{"value": "coral", "label": "Coral"}, {"value": "yellow", "label": "Yellow"}, {"value": "green", "label": "Green"}]}
+      ]
+    }
+  ],
+  "presets": [{"name": "Menu"}]
+}
+{% endschema %}
