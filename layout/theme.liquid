@@ -29,8 +29,10 @@
     @font-face{font-family:'Work Sans';font-weight:500;font-display:swap;src:url({{ 'work-sans-latin-500-normal.woff2' | asset_url }}) format('woff2')}
     @font-face{font-family:'Work Sans';font-weight:600;font-display:swap;src:url({{ 'work-sans-latin-600-normal.woff2' | asset_url }}) format('woff2')}
     @font-face{font-family:'Work Sans';font-weight:700;font-display:swap;src:url({{ 'work-sans-latin-700-normal.woff2' | asset_url }}) format('woff2')}
+    @font-face{font-family:Yellowtail;font-weight:400;font-display:swap;src:url({{ 'yellowtail-latin-400-normal.woff2' | asset_url }}) format('woff2')}
   </style>
   {{ 'anton-latin-400-normal.woff2' | asset_url | preload_tag: as: 'font', type: 'font/woff2', crossorigin: true }}
+  {{ 'yellowtail-latin-400-normal.woff2' | asset_url | preload_tag: as: 'font', type: 'font/woff2', crossorigin: true }}
   <style>
     :root {
       --ink: {{ settings.color_ink }};

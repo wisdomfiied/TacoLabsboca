@@ -7,7 +7,7 @@
     <div class="hero__copy">
       <div class="hero__brand">
         <img src="{{ 'taco-labs-logo.png' | asset_url }}" alt="" width="110" height="110">
-        <h1 class="hero__title">{{ section.settings.title }}</h1>
+        <h1 class="hero__title script">{{ section.settings.title }}</h1>
       </div>
       {%- render 'stripe' -%}
       <p class="hero__tagline">{{ section.settings.tagline }}</p>
@@ -43,7 +43,7 @@
   "name": "Hero",
   "settings": [
     {"type": "image_picker", "id": "bg_image", "label": "Background food photo (full width)", "info": "Landscape, at least 2000 px wide. The photo is darkened so the text stays readable."},
-    {"type": "text", "id": "title", "label": "Title", "default": "EXPRESS"},
+    {"type": "text", "id": "title", "label": "Title", "default": "Express"},
     {"type": "text", "id": "tagline", "label": "Tagline", "default": "Fast. Fresh. Globally inspired."},
     {"type": "textarea", "id": "subtext", "label": "Subtext", "default": "20 tacos from $3.99 in downtown Boca Raton. Mix and match, make it a combo, and be in and out on your lunch break."},
     {"type": "text", "id": "rating_text", "label": "Rating line (optional)", "info": "Use a real rating, e.g. 4.5 on Uber Eats · 1,500+ ratings"},
