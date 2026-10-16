@@ -7,7 +7,7 @@ Online Store → Themes → Add theme → **Connect from GitHub** → pick this 
 
 ## Store setup (once)
 1. Products → Import → `setup/taco-labs-express-products.csv`
-2. Create 6 pages: menu (page.menu), deals (page.deals), about (page.about), contact (page.contact), faq (page.faq), allergens (page). Copy for 4 of them is in `setup/pages/`.
+2. Create 6 pages titled exactly Menu, Deals, About, Contact, FAQ, Allergens on the Default page template (the theme picks the right sections per page). Copy for 4 of them is in `setup/pages/`.
 3. Publish the theme.
 
 Full instructions: `setup/SETUP-GUIDE.md`. Every link on the site: `setup/LINK-CHECK.md`. Sign-up pop-up plan (later): `setup/POPUP-SETUP.md`.

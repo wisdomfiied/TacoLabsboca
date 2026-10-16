@@ -1,3 +1,19 @@
+{%- liquid
+  assign tl_show = true
+  if page and section.settings.only_on != blank
+    assign tl_only = section.settings.only_on | remove: ' ' | split: ','
+    unless tl_only contains page.handle
+      assign tl_show = false
+    endunless
+  endif
+  if page and section.settings.hide_on != blank
+    assign tl_hide = section.settings.hide_on | remove: ' ' | split: ','
+    if tl_hide contains page.handle
+      assign tl_show = false
+    endif
+  endif
+-%}
+{%- if tl_show -%}
 <section class="section--tight">
   <div class="wrap">
     <div class="combo">
@@ -7,15 +23,51 @@
     </div>
   </div>
 </section>
+{%- endif -%}
 {% schema %}
 {
   "name": "Combo banner",
   "settings": [
-    {"type": "text", "id": "step", "label": "Small label", "default": "STEP 2"},
-    {"type": "text", "id": "title", "label": "Title", "default": "MAKE IT A COMBO"},
-    {"type": "textarea", "id": "text", "label": "Middle text", "default": "Any 3 tacos + chips & salsa\nBeef & seafood tacos +50¢ each"},
-    {"type": "text", "id": "price", "label": "Price", "default": "$14.99"}
+    {
+      "type": "text",
+      "id": "step",
+      "label": "Small label",
+      "default": "STEP 2"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "MAKE IT A COMBO"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Middle text",
+      "default": "Any 3 tacos + chips & salsa\nBeef & seafood tacos +50¢ each"
+    },
+    {
+      "type": "text",
+      "id": "price",
+      "label": "Price",
+      "default": "$14.99"
+    },
+    {
+      "type": "text",
+      "id": "only_on",
+      "label": "Only show on pages (handles, comma-separated)",
+      "info": "Leave empty to show everywhere. Example: menu,deals"
+    },
+    {
+      "type": "text",
+      "id": "hide_on",
+      "label": "Hide on pages (handles, comma-separated)"
+    }
   ],
-  "presets": [{"name": "Combo banner"}]
+  "presets": [
+    {
+      "name": "Combo banner"
+    }
+  ]
 }
 {% endschema %}

@@ -1,3 +1,19 @@
+{%- liquid
+  assign tl_show = true
+  if page and section.settings.only_on != blank
+    assign tl_only = section.settings.only_on | remove: ' ' | split: ','
+    unless tl_only contains page.handle
+      assign tl_show = false
+    endunless
+  endif
+  if page and section.settings.hide_on != blank
+    assign tl_hide = section.settings.hide_on | remove: ' ' | split: ','
+    if tl_hide contains page.handle
+      assign tl_show = false
+    endif
+  endif
+-%}
+{%- if tl_show -%}
 <section class="section">
   <div class="wrap">
     <h1 class="page-title">{{ page.title }}</h1>
@@ -5,6 +21,22 @@
     {%- if page.content != blank -%}<div class="rte mt">{{ page.content }}</div>{%- endif -%}
   </div>
 </section>
+{%- endif -%}
 {% schema %}
-{"name": "Page content", "settings": [], "enabled_on": {"templates": ["page"]}}
+{
+  "name": "Page content",
+  "settings": [
+    {
+      "type": "text",
+      "id": "only_on",
+      "label": "Only show on pages (handles, comma-separated)",
+      "info": "Leave empty to show everywhere. Example: menu,deals"
+    },
+    {
+      "type": "text",
+      "id": "hide_on",
+      "label": "Hide on pages (handles, comma-separated)"
+    }
+  ]
+}
 {% endschema %}

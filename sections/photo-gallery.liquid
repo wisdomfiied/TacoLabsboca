@@ -1,3 +1,19 @@
+{%- liquid
+  assign tl_show = true
+  if page and section.settings.only_on != blank
+    assign tl_only = section.settings.only_on | remove: ' ' | split: ','
+    unless tl_only contains page.handle
+      assign tl_show = false
+    endunless
+  endif
+  if page and section.settings.hide_on != blank
+    assign tl_hide = section.settings.hide_on | remove: ' ' | split: ','
+    if tl_hide contains page.handle
+      assign tl_show = false
+    endif
+  endif
+-%}
+{%- if tl_show -%}
 <section class="section section--tight">
   <div class="wrap">
     {%- if section.settings.heading != blank -%}<div class="section-head"><h2>{{ section.settings.heading }}</h2><span class="kicker">{{ section.settings.kicker }}</span></div>{%- endif -%}
@@ -20,20 +36,73 @@
     </div>
   </div>
 </section>
+{%- endif -%}
 {% schema %}
 {
   "name": "Photo gallery",
   "settings": [
-    {"type": "text", "id": "heading", "label": "Heading", "default": "INSIDE THE LAB"},
-    {"type": "text", "id": "kicker", "label": "Small text", "default": "1956 NE 5th Ave, Boca Raton"}
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "INSIDE THE LAB"
+    },
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Small text",
+      "default": "1956 NE 5th Ave, Boca Raton"
+    },
+    {
+      "type": "text",
+      "id": "only_on",
+      "label": "Only show on pages (handles, comma-separated)",
+      "info": "Leave empty to show everywhere. Example: menu,deals"
+    },
+    {
+      "type": "text",
+      "id": "hide_on",
+      "label": "Hide on pages (handles, comma-separated)"
+    }
   ],
   "blocks": [
-    {"type": "photo", "name": "Photo", "settings": [
-      {"type": "image_picker", "id": "image", "label": "Photo"},
-      {"type": "text", "id": "image_asset", "label": "Built-in photo file (used when no photo is picked)"},
-      {"type": "text", "id": "caption", "label": "Caption"}
-    ]}
+    {
+      "type": "photo",
+      "name": "Photo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "image_asset",
+          "label": "Built-in photo file (used when no photo is picked)"
+        },
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Caption"
+        }
+      ]
+    }
   ],
-  "presets": [{"name": "Photo gallery", "blocks": [{"type": "photo"}, {"type": "photo"}, {"type": "photo"}]}]
+  "presets": [
+    {
+      "name": "Photo gallery",
+      "blocks": [
+        {
+          "type": "photo"
+        },
+        {
+          "type": "photo"
+        },
+        {
+          "type": "photo"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}

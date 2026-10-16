@@ -1,3 +1,19 @@
+{%- liquid
+  assign tl_show = true
+  if page and section.settings.only_on != blank
+    assign tl_only = section.settings.only_on | remove: ' ' | split: ','
+    unless tl_only contains page.handle
+      assign tl_show = false
+    endunless
+  endif
+  if page and section.settings.hide_on != blank
+    assign tl_hide = section.settings.hide_on | remove: ' ' | split: ','
+    if tl_hide contains page.handle
+      assign tl_show = false
+    endif
+  endif
+-%}
+{%- if tl_show -%}
 <section class="section">
   <div class="wrap">
     {%- liquid
@@ -21,17 +37,62 @@
     </div>
   </div>
 </section>
+{%- endif -%}
 {% schema %}
 {
   "name": "Catering",
   "settings": [
-    {"type": "image_picker", "id": "image", "label": "Photo (optional)"},
-    {"type": "text", "id": "image_asset", "label": "Built-in photo file", "default": "tlx-taco-bar-catering.jpg"},
-    {"type": "text", "id": "title", "label": "Title", "default": "TACO BARS FOR YOUR NEXT PARTY"},
-    {"type": "textarea", "id": "text", "label": "Text", "default": "Signature, Premium & Deluxe taco bars for offices, teams and families. Order online for pickup or delivery."},
-    {"type": "text", "id": "display_url", "label": "Displayed web address", "default": "catering.tacolabsfl.com"},
-    {"type": "text", "id": "button_label", "label": "Button label", "default": "Order Catering"}
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Photo (optional)"
+    },
+    {
+      "type": "text",
+      "id": "image_asset",
+      "label": "Built-in photo file",
+      "default": "tlx-taco-bar-catering.jpg"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "TACO BARS FOR YOUR NEXT PARTY"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Signature, Premium & Deluxe taco bars for offices, teams and families. Order online for pickup or delivery."
+    },
+    {
+      "type": "text",
+      "id": "display_url",
+      "label": "Displayed web address",
+      "default": "catering.tacolabsfl.com"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Order Catering"
+    },
+    {
+      "type": "text",
+      "id": "only_on",
+      "label": "Only show on pages (handles, comma-separated)",
+      "info": "Leave empty to show everywhere. Example: menu,deals"
+    },
+    {
+      "type": "text",
+      "id": "hide_on",
+      "label": "Hide on pages (handles, comma-separated)"
+    }
   ],
-  "presets": [{"name": "Catering"}]
+  "presets": [
+    {
+      "name": "Catering"
+    }
+  ]
 }
 {% endschema %}

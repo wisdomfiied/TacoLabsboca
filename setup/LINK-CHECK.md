@@ -2,7 +2,7 @@
 
 Every link on every page was extracted from the rendered theme (home, menu, deals, about, visit, FAQ, allergens, all 70 item pages, all category pages, 404) in two setups: fully set up, and right after install with no collections or menus. 0 broken internal links in both.
 
-## Internal pages (create these 6 pages in Shopify – step 4 of the setup guide)
+## Internal pages (create these 6 pages in Shopify with the exact titles Menu, Deals, About, Contact, FAQ, Allergens – step 4 of the setup guide)
 /pages/menu · /pages/deals · /pages/about · /pages/contact · /pages/faq · /pages/allergens
 Item pages (/products/…) come from the product CSV. Category pages (/collections/…) appear only if you create collections; otherwise item pages link back to the menu.
 

@@ -1,3 +1,19 @@
+{%- liquid
+  assign tl_show = true
+  if page and section.settings.only_on != blank
+    assign tl_only = section.settings.only_on | remove: ' ' | split: ','
+    unless tl_only contains page.handle
+      assign tl_show = false
+    endunless
+  endif
+  if page and section.settings.hide_on != blank
+    assign tl_hide = section.settings.hide_on | remove: ' ' | split: ','
+    if tl_hide contains page.handle
+      assign tl_show = false
+    endif
+  endif
+-%}
+{%- if tl_show -%}
 {%- capture full_address -%}{{ settings.address_street }}, {{ settings.address_city }}, FL {{ settings.address_zip }}{%- endcapture -%}
 <section class="section" id="location">
   <div class="wrap">
@@ -34,21 +50,86 @@
     </div>
   </div>
 </section>
+{%- endif -%}
 {% schema %}
 {
   "name": "Locations & hours",
   "settings": [
-    {"type": "text", "id": "heading", "label": "Heading", "default": "FIND THE LAB"},
-    {"type": "text", "id": "kicker", "label": "Small text", "default": "Two ways to Taco Labs"},
-    {"type": "checkbox", "id": "show_second", "label": "Show Kitchen & Bar location", "default": true},
-    {"type": "text", "id": "second_name", "label": "Second location name", "default": "Taco Labs Kitchen & Bar"},
-    {"type": "text", "id": "second_type", "label": "Second location description", "default": "Full service · servers · full bar"},
-    {"type": "text", "id": "second_address", "label": "Second location address", "default": "7619 N State Road 7, Parkland, FL"},
-    {"type": "text", "id": "second_phone", "label": "Second location phone", "default": "(754) 812-1221"},
-    {"type": "textarea", "id": "second_text", "label": "Second location text", "default": "Our full-service restaurant in Parkland. Sit down, order from your server and enjoy the full bar."},
-    {"type": "url", "id": "second_url", "label": "Second location website"},
-    {"type": "text", "id": "second_link_label", "label": "Website button label", "default": "Visit Kitchen & Bar"}
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "FIND THE LAB"
+    },
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Small text",
+      "default": "Two ways to Taco Labs"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_second",
+      "label": "Show Kitchen & Bar location",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "second_name",
+      "label": "Second location name",
+      "default": "Taco Labs Kitchen & Bar"
+    },
+    {
+      "type": "text",
+      "id": "second_type",
+      "label": "Second location description",
+      "default": "Full service · servers · full bar"
+    },
+    {
+      "type": "text",
+      "id": "second_address",
+      "label": "Second location address",
+      "default": "7619 N State Road 7, Parkland, FL"
+    },
+    {
+      "type": "text",
+      "id": "second_phone",
+      "label": "Second location phone",
+      "default": "(754) 812-1221"
+    },
+    {
+      "type": "textarea",
+      "id": "second_text",
+      "label": "Second location text",
+      "default": "Our full-service restaurant in Parkland. Sit down, order from your server and enjoy the full bar."
+    },
+    {
+      "type": "url",
+      "id": "second_url",
+      "label": "Second location website"
+    },
+    {
+      "type": "text",
+      "id": "second_link_label",
+      "label": "Website button label",
+      "default": "Visit Kitchen & Bar"
+    },
+    {
+      "type": "text",
+      "id": "only_on",
+      "label": "Only show on pages (handles, comma-separated)",
+      "info": "Leave empty to show everywhere. Example: menu,deals"
+    },
+    {
+      "type": "text",
+      "id": "hide_on",
+      "label": "Hide on pages (handles, comma-separated)"
+    }
   ],
-  "presets": [{"name": "Locations & hours"}]
+  "presets": [
+    {
+      "name": "Locations & hours"
+    }
+  ]
 }
 {% endschema %}

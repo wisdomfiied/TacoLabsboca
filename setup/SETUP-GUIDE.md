@@ -45,18 +45,19 @@ Keep the title exactly as written so the web address (handle) matches the theme.
 | Fan Favorites | **Any** condition: Product tag = Fan Favorite, Product tag = Bestseller | fan-favorites |
 
 ### 4. Create 6 pages
-Online Store → Pages → Add page. Pick the **Theme template** on the right.
+Online Store → Pages → Add page. Use these **exact titles** (Shopify turns them into the web addresses the site links to). Leave the Theme template on **Default page**: the theme shows the right sections on each page by itself.
 
-| Title | Template | Content | Handle |
-|---|---|---|---|
-| Menu | page.menu | leave empty | menu |
-| Deals | page.deals | pages/deals.html | deals |
-| About | page.about | pages/about.html | about |
-| Visit & Contact | page.contact | pages/contact.html | contact |
-| FAQ | page.faq | leave empty (questions are in the theme editor) | faq |
-| Allergens & Dietary | page | pages/allergens.html | allergens |
+| Title (exact) | Content to paste | Web address it gets |
+|---|---|---|
+| Menu | leave empty | /pages/menu |
+| Deals | pages/deals.html | /pages/deals |
+| About | pages/about.html | /pages/about |
+| Contact | pages/contact.html | /pages/contact |
+| FAQ | leave empty | /pages/faq |
+| Allergens | pages/allergens.html | /pages/allergens |
 
 To paste HTML: in the page editor click the `<>` (Show HTML) button, paste, save.
+Why the template list may be missing: Shopify only lists templates from your **published** theme. You don't need them here, but they appear once this theme is published.
 
 ### 5. Navigation (optional)
 The header and footer already show the right links out of the box. Create these menus only if you want to change them.
