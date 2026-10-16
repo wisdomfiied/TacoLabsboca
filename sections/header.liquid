@@ -6,7 +6,6 @@
       {%- else -%}
         <img src="{{ 'taco-labs-logo.png' | asset_url }}" alt="{{ shop.name | escape }}" width="56" height="56">
       {%- endif -%}
-      <span class="script">Express</span>
     </a>
     <nav class="site-nav" aria-label="Main">
       {%- render 'nav-links', menu: section.settings.menu, kind: 'main' -%}
