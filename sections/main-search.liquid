@@ -1,0 +1,23 @@
+<section class="section">
+  <div class="wrap">
+    <h1 class="page-title">Search</h1>
+    <form class="search-form" action="{{ routes.search_url }}" method="get" role="search">
+      <label class="visually-hidden" for="q">Search the menu</label>
+      <input id="q" type="search" name="q" value="{{ search.terms | escape }}" placeholder="Search the menu">
+      <input type="hidden" name="type" value="product">
+      <button class="btn btn--ink" type="submit">Search</button>
+    </form>
+    {%- if search.performed -%}
+      <div class="items">
+        {%- for item in search.results -%}
+          {%- if item.object_type == 'product' -%}{%- render 'menu-item', product: item, show_link: false -%}{%- endif -%}
+        {%- else -%}
+          <p>No results for “{{ search.terms | escape }}”.</p>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+{% schema %}
+{"name": "Search", "settings": [], "enabled_on": {"templates": ["search"]}}
+{% endschema %}

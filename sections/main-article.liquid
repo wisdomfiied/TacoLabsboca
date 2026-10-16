@@ -1,0 +1,11 @@
+<section class="section">
+  <div class="wrap">
+    <h1 class="page-title">{{ article.title }}</h1>
+    <p class="item__desc">{{ article.published_at | date: '%B %-d, %Y' }}</p>
+    {%- if article.image -%}<div class="mt">{{ article.image | image_url: width: 1200 | image_tag: alt: article.title }}</div>{%- endif -%}
+    <div class="rte mt">{{ article.content }}</div>
+  </div>
+</section>
+{% schema %}
+{"name": "Article", "settings": [], "enabled_on": {"templates": ["article"]}}
+{% endschema %}

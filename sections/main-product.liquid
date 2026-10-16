@@ -1,0 +1,52 @@
+<section class="section">
+  <div class="wrap product">
+    <div class="product__art">
+      {%- if product.featured_image -%}
+        {{ product.featured_image | image_url: width: 1000 | image_tag: loading: 'eager', alt: product.featured_image.alt }}
+      {%- else -%}
+        <img class="ph" src="{{ 'taco-labs-logo.png' | asset_url }}" alt="" width="300" height="300">
+      {%- endif -%}
+    </div>
+    <div>
+      {%- assign cat_handle = product.type | handleize -%}
+      {%- assign cat = collections[cat_handle] -%}
+      <a class="product__type" href="{% if cat %}{{ cat.url }}{% else %}/pages/menu{% endif %}">{{ product.type }}</a>
+      <h1>{{ product.title }}</h1>
+      <div class="item__badges">{%- render 'badges', product: product -%}</div>
+      <div class="product__price">{{ product.price | money }}</div>
+      <div class="product__desc rte">{{ product.description }}</div>
+      {%- if product.tags contains 'In-Store Only' -%}
+        <p class="product__note">Available in-store only.</p>
+      {%- else -%}
+        <p class="product__note">Order online for pickup at in-store prices. Pick your tortilla and hold any toppings when you order.</p>
+        {%- render 'order-buttons', size: 'lg' -%}
+      {%- endif -%}
+      <p class="mt"><a href="/pages/menu">&larr; Back to the full menu</a></p>
+    </div>
+  </div>
+</section>
+{%- paginate collections.all.products by 100 -%}
+{%- capture related -%}
+  {%- assign n = 0 -%}
+  {%- if cat and cat.products_count > 1 -%}
+    {%- for p in cat.products -%}
+      {%- if n < 8 and p.id != product.id -%}{%- assign n = n | plus: 1 -%}{%- render 'menu-item', product: p, show_link: false -%}{%- endif -%}
+    {%- endfor -%}
+  {%- else -%}
+    {%- for p in collections.all.products -%}
+      {%- if n < 8 and p.id != product.id and p.type == product.type -%}{%- assign n = n | plus: 1 -%}{%- render 'menu-item', product: p, show_link: false -%}{%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+{%- endcapture -%}
+{%- endpaginate -%}
+{%- if related != blank -%}
+<section class="section--tight">
+  <div class="wrap">
+    <div class="section-head"><h2>MORE {{ product.type | upcase }}</h2></div>
+    <div class="items">{{ related }}</div>
+  </div>
+</section>
+{%- endif -%}
+{% schema %}
+{"name": "Menu item", "settings": [], "enabled_on": {"templates": ["product"]}}
+{% endschema %}

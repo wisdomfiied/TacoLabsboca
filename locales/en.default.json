@@ -1,0 +1,15 @@
+{
+  "general": {
+    "404": {
+      "title": "Page not found"
+    },
+    "password_page": {
+      "login_form_heading": "Enter store using password"
+    }
+  },
+  "templates": {
+    "search": {
+      "title": "Search"
+    }
+  }
+}

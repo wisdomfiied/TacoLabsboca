@@ -1,0 +1,14 @@
+<section class="section">
+  <div class="wrap">
+    <h1 class="page-title">Menu Categories</h1>
+    {%- render 'stripe' -%}
+    <div class="btn-row mt">
+      {%- for c in collections -%}
+        {%- if c.products_count > 0 and c.handle != 'all' and c.handle != 'frontpage' -%}<a class="btn btn--outline" href="{{ c.url }}">{{ c.title }}</a>{%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+{% schema %}
+{"name": "Collections list", "settings": [], "enabled_on": {"templates": ["list-collections"]}}
+{% endschema %}

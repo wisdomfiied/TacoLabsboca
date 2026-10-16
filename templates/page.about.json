@@ -1,0 +1,61 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "favorites": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "fan-favorites",
+        "limit": 6
+      }
+    },
+    "location": {
+      "type": "location-hours",
+      "settings": {
+        "second_url": "https://www.tacolabsfl.com"
+      }
+    },
+    "gallery": {
+      "type": "photo-gallery",
+      "blocks": {
+        "g1": {
+          "type": "photo",
+          "settings": {
+            "caption": "Lunch at the Lab",
+            "image_asset": "tlx-tacos-rice-beans.jpg"
+          }
+        },
+        "g2": {
+          "type": "photo",
+          "settings": {
+            "caption": "The bar",
+            "image_asset": "tlx-drink-at-bar.jpg"
+          }
+        },
+        "g3": {
+          "type": "photo",
+          "settings": {
+            "caption": "The Lab at night",
+            "image_asset": "tlx-exterior-night.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ],
+      "settings": {
+        "heading": "MEET THE LAB"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "gallery",
+    "favorites",
+    "location"
+  ]
+}

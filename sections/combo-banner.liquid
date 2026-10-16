@@ -1,0 +1,21 @@
+<section class="section--tight">
+  <div class="wrap">
+    <div class="combo">
+      <h2><span class="step" style="color:var(--ink)">{{ section.settings.step }}</span>{{ section.settings.title }}</h2>
+      <div class="combo__mid">{{ section.settings.text | newline_to_br }}</div>
+      <span class="combo__price">{{ section.settings.price }}</span>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Combo banner",
+  "settings": [
+    {"type": "text", "id": "step", "label": "Small label", "default": "STEP 2"},
+    {"type": "text", "id": "title", "label": "Title", "default": "MAKE IT A COMBO"},
+    {"type": "textarea", "id": "text", "label": "Middle text", "default": "Any 3 tacos + chips & salsa\nBeef & seafood tacos +50¢ each"},
+    {"type": "text", "id": "price", "label": "Price", "default": "$14.99"}
+  ],
+  "presets": [{"name": "Combo banner"}]
+}
+{% endschema %}

@@ -1,0 +1,37 @@
+<section class="section">
+  <div class="wrap">
+    {%- liquid
+      assign has_photo = false
+      if section.settings.image != blank or section.settings.image_asset != blank
+        assign has_photo = true
+      endif
+    -%}
+    <div class="catering{% if has_photo %} catering--photo{% endif %}">
+      {%- if section.settings.image != blank -%}
+        <div class="catering__media">{{ section.settings.image | image_url: width: 1000 | image_tag: loading: 'lazy', sizes: '(min-width: 900px) 40vw, 100vw', widths: '500, 1000', alt: section.settings.image.alt }}</div>
+      {%- elsif section.settings.image_asset != blank -%}
+        <div class="catering__media">{%- render 'asset-photo', file: section.settings.image_asset, alt: 'Taco bar catering spread' -%}</div>
+      {%- endif -%}
+      <div class="catering__copy">
+        <h2>{{ section.settings.title }}</h2>
+        <p>{{ section.settings.text }}</p>
+        <span class="catering__url">{{ section.settings.display_url }}</span>
+      </div>
+      <a class="btn btn--yellow btn--lg" href="{{ settings.catering_url }}" target="_blank" rel="noopener">{{ section.settings.button_label }}</a>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Catering",
+  "settings": [
+    {"type": "image_picker", "id": "image", "label": "Photo (optional)"},
+    {"type": "text", "id": "image_asset", "label": "Built-in photo file", "default": "tlx-taco-bar-catering.jpg"},
+    {"type": "text", "id": "title", "label": "Title", "default": "TACO BARS FOR YOUR NEXT PARTY"},
+    {"type": "textarea", "id": "text", "label": "Text", "default": "Signature, Premium & Deluxe taco bars for offices, teams and families. Order online for pickup or delivery."},
+    {"type": "text", "id": "display_url", "label": "Displayed web address", "default": "catering.tacolabsfl.com"},
+    {"type": "text", "id": "button_label", "label": "Button label", "default": "Order Catering"}
+  ],
+  "presets": [{"name": "Catering"}]
+}
+{% endschema %}

@@ -1,0 +1,9 @@
+{
+  "type": "header",
+  "name": "Header group",
+  "sections": {
+    "announcement": {"type": "announcement-bar", "settings": {"text": "Taco Tuesday & Happy Hour: $3 & $4 tacos, $5 margaritas · Dine-in", "link": "/pages/deals"}},
+    "header": {"type": "header", "settings": {"menu": "main-menu"}}
+  },
+  "order": ["announcement", "header"]
+}

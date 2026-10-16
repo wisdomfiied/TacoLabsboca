@@ -1,0 +1,33 @@
+<header class="site-header">
+  <div class="wrap site-header__bar">
+    <a class="site-header__logo" href="{{ routes.root_url }}">
+      {%- if section.settings.logo != blank -%}
+        <img src="{{ section.settings.logo | image_url: width: 160 }}" alt="{{ shop.name | escape }}" width="56" height="56">
+      {%- else -%}
+        <img src="{{ 'taco-labs-logo.png' | asset_url }}" alt="{{ shop.name | escape }}" width="56" height="56">
+      {%- endif -%}
+      <span>EXPRESS</span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      {%- render 'nav-links', menu: section.settings.menu, kind: 'main' -%}
+      {%- if settings.order_url != blank -%}<a class="btn btn--coral" href="{{ settings.order_url }}" target="_blank" rel="noopener">Order Pickup</a>{%- endif -%}
+    </nav>
+    <details class="mobile-nav">
+      <summary aria-label="Open menu">Menu</summary>
+      <div class="mobile-nav__panel">
+        {%- render 'nav-links', menu: section.settings.menu, kind: 'main' -%}
+        {%- if settings.order_url != blank -%}<a class="btn btn--coral" href="{{ settings.order_url }}" target="_blank" rel="noopener">Order Pickup</a>{%- endif -%}
+      </div>
+    </details>
+  </div>
+  {%- render 'stripe' -%}
+</header>
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {"type": "image_picker", "id": "logo", "label": "Logo (leave empty to use the built-in Taco Labs logo)"},
+    {"type": "link_list", "id": "menu", "label": "Menu", "default": "main-menu"}
+  ]
+}
+{% endschema %}

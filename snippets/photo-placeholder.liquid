@@ -1,0 +1,5 @@
+{%- comment -%} Shown only in the theme editor when a photo slot is empty. Usage: render 'photo-placeholder', label: 'Food photo' {%- endcomment -%}
+<div class="ph-tile">
+  <img src="{{ 'taco-labs-logo.png' | asset_url }}" alt="" width="90" height="90" loading="lazy">
+  <span>{{ label | default: 'Add a photo' }}</span>
+</div>

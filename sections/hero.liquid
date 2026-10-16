@@ -1,0 +1,60 @@
+{%- assign bg = section.settings.bg_image -%}
+<section class="hero{% if bg != blank %} hero--photo{% endif %}">
+  {%- if bg != blank -%}
+    <div class="hero__bg">{{ bg | image_url: width: 2400 | image_tag: loading: 'eager', fetchpriority: 'high', sizes: '100vw', widths: '800, 1200, 1600, 2400', alt: bg.alt }}</div>
+  {%- endif -%}
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <div class="hero__brand">
+        <img src="{{ 'taco-labs-logo.png' | asset_url }}" alt="" width="110" height="110">
+        <h1 class="hero__title">{{ section.settings.title }}</h1>
+      </div>
+      {%- render 'stripe' -%}
+      <p class="hero__tagline">{{ section.settings.tagline }}</p>
+      <p class="hero__sub">{{ section.settings.subtext }}</p>
+      <div class="btn-row">
+        {%- if settings.order_url != blank -%}<a class="btn btn--coral btn--lg" href="{{ settings.order_url }}" target="_blank" rel="noopener">Order Pickup</a>{%- endif -%}
+        <a class="btn btn--outline btn--lg" href="{{ section.settings.menu_link | default: '/pages/menu' }}">See the Menu</a>
+      </div>
+      {%- if section.settings.rating_text != blank -%}<p class="hero__rating"><span aria-hidden="true">★★★★★</span> {{ section.settings.rating_text }}</p>{%- endif -%}
+    </div>
+    <div>
+      {%- if section.settings.image != blank or section.settings.image_asset != blank -%}
+        <div class="hero__media">
+          {%- if section.settings.image != blank -%}
+            {{ section.settings.image | image_url: width: 1400 | image_tag: loading: 'eager', sizes: '(min-width: 900px) 45vw, 100vw', widths: '700, 1000, 1400', alt: section.settings.image.alt }}
+          {%- else -%}
+            {%- render 'asset-photo', file: section.settings.image_asset, alt: section.settings.image_alt, width: 1354, height: 1020, eager: true -%}
+          {%- endif -%}
+          {%- if section.settings.card_price != blank -%}<div class="hero__tag"><span>{{ section.settings.card_label }}</span><b>{{ section.settings.card_price }}</b></div>{%- endif -%}
+        </div>
+      {%- else -%}
+        <div class="hero__price-card">
+          <span class="label">{{ section.settings.card_label }}</span>
+          <span class="big">{{ section.settings.card_price }}</span>
+          <span style="font-weight:700;font-size:18px">{{ section.settings.card_text }}</span>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    {"type": "image_picker", "id": "bg_image", "label": "Background food photo (full width)", "info": "Landscape, at least 2000 px wide. The photo is darkened so the text stays readable."},
+    {"type": "text", "id": "title", "label": "Title", "default": "EXPRESS"},
+    {"type": "text", "id": "tagline", "label": "Tagline", "default": "Fast. Fresh. Globally inspired."},
+    {"type": "textarea", "id": "subtext", "label": "Subtext", "default": "20 tacos from $3.99 in downtown Boca Raton. Mix and match, make it a combo, and be in and out on your lunch break."},
+    {"type": "text", "id": "rating_text", "label": "Rating line (optional)", "info": "Use a real rating, e.g. 4.5 on Uber Eats · 1,500+ ratings"},
+    {"type": "url", "id": "menu_link", "label": "Menu button link"},
+    {"type": "image_picker", "id": "image", "label": "Side photo", "info": "Overrides the built-in photo below."},
+    {"type": "text", "id": "image_asset", "label": "Built-in photo file", "default": "tlx-tacos-hero.jpg", "info": "A photo bundled with the theme. Clear it to show the price card instead."},
+    {"type": "text", "id": "image_alt", "label": "Photo description", "default": "Three tacos with crema, pico and guacamole at Taco Labs"},
+    {"type": "text", "id": "card_label", "label": "Price card label", "default": "ANY 3 TACOS + CHIPS & SALSA"},
+    {"type": "text", "id": "card_price", "label": "Price card price", "default": "$14.99"},
+    {"type": "text", "id": "card_text", "label": "Price card note", "default": "Beef & seafood tacos +50¢ each"}
+  ],
+  "presets": [{"name": "Hero"}]
+}
+{% endschema %}

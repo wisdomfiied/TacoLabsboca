@@ -1,0 +1,26 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": {{ shop.name | json }},
+  "url": {{ shop.url | json }},
+  "telephone": {{ settings.phone | json }},
+  "servesCuisine": ["Tacos", "Mexican", "Fusion"],
+  "priceRange": "$",
+  "menu": {{ shop.url | append: '/pages/menu' | json }},
+  "acceptsReservations": false,
+  "image": {{ 'social-share-1200x630.png' | asset_url | prepend: 'https:' | json }},
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": {{ settings.address_street | json }},
+    "addressLocality": {{ settings.address_city | json }},
+    "addressRegion": "FL",
+    "postalCode": {{ settings.address_zip | json }},
+    "addressCountry": "US"
+  },
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "11:30", "closes": "22:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "11:30", "closes": "21:00"}
+  ]
+}
+</script>

@@ -1,0 +1,19 @@
+{
+  "sections": {
+    "location": {
+      "type": "location-hours",
+      "settings": {
+        "heading": "VISIT US",
+        "second_url": "https://www.tacolabsfl.com"
+      }
+    },
+    "main": {
+      "type": "main-contact",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "location"
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "deals": {
+      "type": "deals",
+      "blocks": {
+        "lunch": {
+          "type": "deal",
+          "settings": {
+            "title": "LUNCH AT THE LAB",
+            "when": "Every open day · 11:30 AM–3 PM",
+            "lines": "2 tacos | $9.99\n3 tacos | $12.99\nBurrito or bowl | $12.99",
+            "note": "Includes chips, salsa & a fountain drink. Beef & seafood +50¢ per taco, +$1.50 burrito or bowl.",
+            "color": "yellow"
+          }
+        },
+        "tuesday": {
+          "type": "deal",
+          "settings": {
+            "title": "TACO TUESDAY & HAPPY HOUR",
+            "when": "Dine-in · All day Tuesday · 3–6 PM Wed–Sun",
+            "lines": "Chicken & veggie tacos | $3\nBeef & seafood tacos | $4\nMargaritas | $5",
+            "note": "Single tacos only. Dine-in only.",
+            "color": "coral"
+          }
+        },
+        "ayce": {
+          "type": "deal",
+          "settings": {
+            "title": "ALL YOU CAN EAT",
+            "when": "Wednesday & Sunday · Dine-in",
+            "big_price": "$24.99",
+            "lines": "Unlimited tacos | ✓\nChips & salsa | ✓",
+            "note": "Per person, dine-in only. Order up to 3 tacos per round at the counter.",
+            "color": "green"
+          }
+        }
+      },
+      "block_order": [
+        "lunch",
+        "tuesday",
+        "ayce"
+      ],
+      "settings": {
+        "heading": "THIS WEEK AT THE LAB",
+        "kicker": "Dine-in deals"
+      }
+    },
+    "combo": {
+      "type": "combo-banner",
+      "settings": {}
+    },
+    "location": {
+      "type": "location-hours",
+      "settings": {
+        "second_url": "https://www.tacolabsfl.com"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "deals",
+    "combo",
+    "location"
+  ]
+}

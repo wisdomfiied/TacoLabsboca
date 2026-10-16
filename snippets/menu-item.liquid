@@ -1,0 +1,12 @@
+{%- comment -%} One menu line. Usage: render 'menu-item', product: product, show_link: true {%- endcomment -%}
+<article class="item">
+  <div class="item__head">
+    <h3 class="item__name">
+      {%- if show_link -%}<a href="{{ product.url }}">{{ product.title | escape }}</a>{%- else -%}{{ product.title | escape }}{%- endif -%}
+    </h3>
+    <span class="item__badges">{%- render 'badges', product: product -%}</span>
+    <span class="item__price">{{ product.price | money }}</span>
+  </div>
+  {%- assign d = product.description | replace: '</p>', '</p> ' | strip_html | strip -%}
+  {%- if d != blank -%}<p class="item__desc">{{ d | truncate: 170 }}</p>{%- endif -%}
+</article>

@@ -1,0 +1,12 @@
+{%- comment -%} Usage: render 'order-buttons', size: 'lg' {%- endcomment -%}
+<div class="btn-row">
+  {%- if settings.order_url != blank -%}
+    <a class="btn btn--coral{% if size == 'lg' %} btn--lg{% endif %}" href="{{ settings.order_url }}" target="_blank" rel="noopener">Order Pickup</a>
+  {%- endif -%}
+  {%- if settings.ubereats_url != blank -%}
+    <a class="btn btn--outline{% if size == 'lg' %} btn--lg{% endif %}" href="{{ settings.ubereats_url }}" target="_blank" rel="noopener">Uber Eats</a>
+  {%- endif -%}
+  {%- if settings.doordash_url != blank -%}
+    <a class="btn btn--outline{% if size == 'lg' %} btn--lg{% endif %}" href="{{ settings.doordash_url }}" target="_blank" rel="noopener">DoorDash</a>
+  {%- endif -%}
+</div>

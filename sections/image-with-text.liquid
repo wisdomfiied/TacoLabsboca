@@ -1,0 +1,37 @@
+<section class="section{% if section.settings.dark %} section--ink{% endif %}">
+  <div class="wrap iwt{% if section.settings.image_right %} iwt--right{% endif %}">
+    <div class="iwt__media">
+      {%- if section.settings.image != blank -%}
+        {{ section.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', sizes: '(min-width: 900px) 50vw, 100vw', widths: '600, 900, 1400', alt: section.settings.image.alt }}
+      {%- elsif section.settings.image_asset != blank -%}
+        {%- render 'asset-photo', file: section.settings.image_asset, alt: section.settings.image_alt -%}
+      {%- else -%}
+        {%- render 'photo-placeholder', label: 'Food or dining room photo' -%}
+      {%- endif -%}
+    </div>
+    <div class="iwt__copy">
+      {%- if section.settings.kicker != blank -%}<span class="kicker-tag">{{ section.settings.kicker }}</span>{%- endif -%}
+      <h2>{{ section.settings.heading }}</h2>
+      <div class="rte">{{ section.settings.text }}</div>
+      {%- if section.settings.button_label != blank -%}<div class="btn-row mt"><a class="btn btn--coral" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a></div>{%- endif -%}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Image with text",
+  "settings": [
+    {"type": "image_picker", "id": "image", "label": "Photo"},
+    {"type": "text", "id": "image_asset", "label": "Built-in photo file (used when no photo is picked)"},
+    {"type": "text", "id": "image_alt", "label": "Photo description"},
+    {"type": "checkbox", "id": "image_right", "label": "Photo on the right", "default": false},
+    {"type": "text", "id": "kicker", "label": "Small label", "default": "WELCOME TO THE LAB"},
+    {"type": "text", "id": "heading", "label": "Heading", "default": "TACOS FROM EVERYWHERE, MADE FAST"},
+    {"type": "richtext", "id": "text", "label": "Text", "default": "<p>Twenty tacos that pull flavors from around the world: birria with a 24-hour consommé, al pastor with pineapple, Korean BBQ steak, New Delhi tandoori, smash beef on a crispy cheese crust. Order at the counter and your food is up fast.</p>"},
+    {"type": "text", "id": "button_label", "label": "Button label", "default": "Our Story"},
+    {"type": "url", "id": "button_link", "label": "Button link"},
+    {"type": "checkbox", "id": "dark", "label": "Dark background", "default": false}
+  ],
+  "presets": [{"name": "Image with text"}]
+}
+{% endschema %}

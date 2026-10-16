@@ -1,0 +1,19 @@
+{%- comment -%} Menu links with a built-in fallback so the site works before menus are set up. Usage: render 'nav-links', menu: section.settings.menu, kind: 'main' | 'footer', wrap: 'li' {%- endcomment -%}
+{%- if menu != blank and menu.links.size > 0 -%}
+  {%- for link in menu.links -%}
+    {%- if wrap == 'li' -%}<li>{%- endif -%}<a href="{{ link.url }}"{% if link.current %} aria-current="page"{% endif %}{% if link.type == 'http_link' %} target="_blank" rel="noopener"{% endif %}>{{ link.title | escape }}</a>{%- if wrap == 'li' -%}</li>{%- endif -%}
+  {%- endfor -%}
+{%- else -%}
+  {%- if kind == 'footer' -%}
+    {%- capture defaults -%}Menu|/pages/menu,Deals|/pages/deals,FAQ|/pages/faq,Allergens & Dietary|/pages/allergens,Catering|{{ settings.catering_url }},Visit & Contact|/pages/contact{%- endcapture -%}
+  {%- else -%}
+    {%- capture defaults -%}Menu|/pages/menu,Deals|/pages/deals,Catering|{{ settings.catering_url }},About|/pages/about,Visit|/pages/contact{%- endcapture -%}
+  {%- endif -%}
+  {%- assign items = defaults | split: ',' -%}
+  {%- for it in items -%}
+    {%- assign p = it | split: '|' -%}
+    {%- if p[1] != blank -%}
+      {%- if wrap == 'li' -%}<li>{%- endif -%}<a href="{{ p[1] }}"{% if p[1] contains 'http' %} target="_blank" rel="noopener"{% endif %}{% if request.path == p[1] %} aria-current="page"{% endif %}>{{ p[0] }}</a>{%- if wrap == 'li' -%}</li>{%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}

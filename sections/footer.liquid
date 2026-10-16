@@ -1,0 +1,45 @@
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__grid">
+      <div>
+        <div class="site-footer__logo">
+          <img src="{{ 'taco-labs-logo.png' | asset_url }}" alt="{{ shop.name | escape }}" width="64" height="64" loading="lazy">
+          <span class="display" style="font-size:28px;color:#fff;letter-spacing:2px">TACO LABS EXPRESS</span>
+        </div>
+        <p>{{ section.settings.blurb }}</p>
+        {%- render 'order-buttons' -%}
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <p>{{ settings.address_street }}<br>{{ settings.address_city }}, FL {{ settings.address_zip }}</p>
+        <p><a href="{% render 'tel', phone: settings.phone %}">{{ settings.phone }}</a></p>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <p>{{ settings.hours_text | newline_to_br }}</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          {%- render 'nav-links', menu: section.settings.menu, kind: 'footer', wrap: 'li' -%}
+          {%- if settings.instagram_url != blank -%}<li><a href="{{ settings.instagram_url }}" target="_blank" rel="noopener">Instagram</a></li>{%- endif -%}
+          {%- if settings.facebook_url != blank -%}<li><a href="{{ settings.facebook_url }}" target="_blank" rel="noopener">Facebook</a></li>{%- endif -%}
+          {%- if settings.tiktok_url != blank -%}<li><a href="{{ settings.tiktok_url }}" target="_blank" rel="noopener">TikTok</a></li>{%- endif -%}
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__legal">
+      <span>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. Prices shown are in-store and pickup prices.</span>
+      <span>GF* = gluten-friendly on a corn tortilla. V = vegetarian. Shared surfaces and fryers may cause cross-contact.</span>
+    </div>
+  </div>
+</footer>
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {"type": "textarea", "id": "blurb", "label": "Short description", "default": "Fast, fresh, globally inspired tacos in downtown Boca Raton. 20 tacos, mix and match your favorites."},
+    {"type": "link_list", "id": "menu", "label": "Footer menu", "default": "footer"}
+  ]
+}
+{% endschema %}

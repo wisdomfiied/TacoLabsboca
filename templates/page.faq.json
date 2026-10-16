@@ -1,0 +1,102 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q0": {
+          "type": "question",
+          "settings": {
+            "question": "Do you take online orders?",
+            "answer": "<p>Yes. Click <strong>Order Pickup</strong> anywhere on this site to order for pickup at in-store prices. We also deliver through Uber Eats and DoorDash.</p>"
+          }
+        },
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Are your tacos gluten-free?",
+            "answer": "<p>Every taco comes on a flour tortilla. Ask for corn at no charge. Items marked GF* are gluten-friendly on a corn tortilla. Korean BBQ (soy), breaded and battered items contain gluten. We share cooking surfaces and fryers, so we can't guarantee an item is free of gluten.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Do you have vegetarian options?",
+            "answer": "<p>Yes: the Bean, Jackfruit Birria and Korean BBQ Tofu tacos, Cheese Quesadilla, Street Corn, Guac & Chips and more. Our vegetarian items contain dairy.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Can I leave off toppings?",
+            "answer": "<p>Yes. Every item lets you hold any of its toppings, like no onion or no cilantro, when you order online or at the counter.</p>"
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "When is Taco Tuesday and Happy Hour?",
+            "answer": "<p>All day Tuesday and 3–6 PM Wednesday through Sunday: $3 chicken & veggie tacos, $4 beef & seafood tacos and $5 margaritas. Dine-in only.</p>"
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "question": "How does All You Can Eat work?",
+            "answer": "<p>Wednesday and Sunday, dine-in only, $24.99 per person for unlimited tacos plus chips & salsa. Order up to 3 tacos per round at the counter.</p>"
+          }
+        },
+        "q6": {
+          "type": "question",
+          "settings": {
+            "question": "Do you cater?",
+            "answer": "<p>Yes. Taco bars for offices, teams and families at <a href=\"https://catering.tacolabsfl.com/pages/catering-menu\">catering.tacolabsfl.com</a>.</p>"
+          }
+        },
+        "q7": {
+          "type": "question",
+          "settings": {
+            "question": "Is there parking?",
+            "answer": "<p>Yes. There is a parking lot right out front, so it is easy to park, grab your food and go.</p>"
+          }
+        },
+        "q_kb": {
+          "type": "question",
+          "settings": {
+            "question": "Is this the same as Taco Labs Kitchen & Bar?",
+            "answer": "<p>Same tacos and margaritas, different experience. Taco Labs Express in Boca is our quick, counter-service shop with lower prices. Taco Labs Kitchen &amp; Bar in Parkland (7619 N State Road 7) is full service with servers and a full bar. <a href=\"https://www.tacolabsfl.com\">tacolabsfl.com</a></p>"
+          }
+        },
+        "q_ing": {
+          "type": "question",
+          "settings": {
+            "question": "What goes into your food?",
+            "answer": "<p>Everything is made from scratch, fresh every day. Nothing is canned. Our meats are high quality, most of our ingredients are organic, we use as little seed oil as possible and no palm oil.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q0",
+        "q_ing",
+        "q_kb",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7"
+      ],
+      "settings": {
+        "heading": "FREQUENTLY ASKED"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "faq"
+  ]
+}
