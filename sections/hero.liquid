@@ -10,7 +10,7 @@
   endif
 -%}
 {%- if full and has_photo -%}
-<section class="hero hero--photo hero--center">
+<section class="hero hero--photo hero--bold">
   <div class="hero__bg">
     {%- if bg != blank -%}
       {{ bg | image_url: width: 2400 | image_tag: loading: 'eager', fetchpriority: 'high', sizes: '100vw', widths: '800, 1200, 1600, 2400', alt: bg.alt }}
@@ -18,13 +18,14 @@
       {%- render 'asset-photo', file: section.settings.image_asset, alt: section.settings.image_alt, width: 1192, height: 670, eager: true -%}
     {%- endif -%}
   </div>
-  <div class="wrap hero__center">
-    <div class="hero__brand">
-      <img src="{{ 'taco-labs-logo.png' | asset_url }}" alt="" width="110" height="110">
-      <h1 class="hero__title script">{{ section.settings.title }}</h1>
-    </div>
-    {%- render 'stripe' -%}
-    <p class="hero__tagline">{{ section.settings.tagline }}</p>
+  <div class="wrap hero__bold">
+    {%- if section.settings.eyebrow != blank -%}<p class="hero__eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+    {%- assign lines = section.settings.headline | newline_to_br | split: '<br />' -%}
+    <h1 class="hero__headline">
+      {%- for line in lines -%}
+        <span class="{% if forloop.last and forloop.length > 1 %}is-accent{% endif %}">{{ line | strip }}</span>
+      {%- endfor -%}
+    </h1>
     <p class="hero__sub">{{ section.settings.subtext }}</p>
     <div class="btn-row">
       {%- if settings.order_url != blank -%}<a class="btn btn--coral btn--lg" href="{{ settings.order_url }}" target="_blank" rel="noopener">Order Pickup</a>{%- endif -%}
@@ -32,7 +33,18 @@
     </div>
     {%- if section.settings.rating_text != blank -%}<p class="hero__rating"><span aria-hidden="true">★★★★★</span> {{ section.settings.rating_text }}</p>{%- endif -%}
   </div>
+  {%- if section.settings.badge_big != blank -%}
+    <div class="hero__badge" aria-hidden="true"><small>{{ section.settings.badge_top }}</small><b>{{ section.settings.badge_big }}</b><small>{{ section.settings.badge_bottom }}</small></div>
+  {%- endif -%}
 </section>
+{%- if section.settings.marquee != blank -%}
+  {%- assign words = section.settings.marquee | split: ',' -%}
+  <div class="marquee" aria-label="{{ section.settings.marquee | escape }}">
+    <div class="marquee__track" aria-hidden="true">
+      {%- for i in (1..4) -%}{%- for w in words -%}<span>{{ w | strip }}</span><i>✦</i>{%- endfor -%}{%- endfor -%}
+    </div>
+  </div>
+{%- endif -%}
 {%- else -%}
 <section class="hero{% if bg != blank %} hero--photo{% endif %}">
   {%- if bg != blank -%}
@@ -78,8 +90,16 @@
 {
   "name": "Hero",
   "settings": [
-    {"type": "select", "id": "layout", "label": "Layout", "default": "background", "options": [{"value": "background", "label": "Photo behind, text centered"}, {"value": "split", "label": "Text left, photo right"}]},
+    {"type": "select", "id": "layout", "label": "Layout", "default": "background", "options": [{"value": "background", "label": "Photo behind, big headline"}, {"value": "split", "label": "Text left, photo right"}]},
     {"type": "image_picker", "id": "bg_image", "label": "Background photo (overrides the built-in photo)", "info": "Landscape, at least 2000 px wide. The photo is darkened so the text stays readable."},
+    {"type": "header", "content": "Big headline layout"},
+    {"type": "text", "id": "eyebrow", "label": "Small line above headline", "default": "Taco Labs Express · Boca Raton"},
+    {"type": "textarea", "id": "headline", "label": "Headline", "default": "Premium tacos.\nMade fast.", "info": "One phrase per line. The last line is green."},
+    {"type": "text", "id": "badge_top", "label": "Round badge: top", "default": "Made from scratch"},
+    {"type": "text", "id": "badge_big", "label": "Round badge: big text", "default": "Fresh daily", "info": "Leave empty to hide the badge."},
+    {"type": "text", "id": "badge_bottom", "label": "Round badge: bottom", "default": "Taco Labs"},
+    {"type": "text", "id": "marquee", "label": "Scrolling strip words", "default": "Tacos, Birria, Margaritas, Premium ingredients, Made fresh daily", "info": "Comma-separated. Leave empty to hide the strip."},
+    {"type": "header", "content": "Side-by-side layout"},
     {"type": "text", "id": "title", "label": "Title", "default": "Express"},
     {"type": "text", "id": "tagline", "label": "Tagline", "default": "Delicious food. Premium ingredients. Made fast."},
     {"type": "textarea", "id": "subtext", "label": "Subtext", "default": "Globally inspired tacos, birria and margaritas, made from scratch every day with high-quality meats and mostly organic ingredients. Ready in minutes in downtown Boca Raton."},
