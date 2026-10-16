@@ -13,7 +13,7 @@ Item pages (/products/…) come from the product CSV. Category pages (/collectio
 | "Uber Eats" buttons | https://www.ubereats.com/store/taco-labs/XatwzPcqXH-ub-f5dtfMAQ | Loads Taco Labs, 1956 NE 5th Ave #3 |
 | "DoorDash" buttons | https://www.doordash.com/store/taco-labs-boca-raton-25880873/ | Loads Taco Labs, Boca Raton |
 | Catering nav link + "Order Catering" | https://catering.tacolabsfl.com/pages/catering-menu | Loads the catering menu |
-| "Visit Kitchen & Bar" | https://www.tacolabsfl.com | Your site (blocks automated checks; listed in Google results) |
+| "Visit Kitchen & Bar" | https://tacolabsparkland.com | Parkland site (checked: loads) |
 | Instagram | https://www.instagram.com/tacolabs_fl/ | From your message and Google results |
 | TikTok | https://www.tiktok.com/@tacolabsfl | From your message |
 | Facebook | https://www.facebook.com/p/Taco-Labs-Boca-61552158317501/ | From your message |
@@ -23,7 +23,7 @@ Item pages (/products/…) come from the product CSV. Category pages (/collectio
 | Phone (Boca) | tel:+15619610585 → (561) 961-0585 | Taps to call on phones |
 | Phone (Parkland) | tel:+17548121221 → (754) 812-1221 | Taps to call on phones |
 
-Instagram, TikTok, Facebook and tacolabsfl.com block automated checkers, so click those four once after launch.
+Instagram, TikTok, Facebook and tacolabsparkland.com may block automated checkers, so click those four once after launch.
 
 ## Issues found on your Toast ordering page (fix in Toast, not Shopify)
 - Still lists old items (e.g. Loaded Birria Fries) and some wings show no price.

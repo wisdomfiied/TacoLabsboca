@@ -336,7 +336,7 @@
           "type": "question",
           "settings": {
             "question": "Is this the same as Taco Labs Kitchen & Bar?",
-            "answer": "<p>Same tacos and margaritas, different experience. Taco Labs Express in Boca is our quick, counter-service shop with lower prices. Taco Labs Kitchen &amp; Bar in Parkland (7619 N State Road 7) is full service with servers and a full bar. <a href=\"https://www.tacolabsfl.com\">tacolabsfl.com</a></p>"
+            "answer": "<p>Same tacos and margaritas, different experience. Taco Labs Express in Boca is our quick, counter-service shop with lower prices. Taco Labs Kitchen &amp; Bar in Parkland (7619 N State Road 7) is full service with servers and a full bar. <a href=\"https://tacolabsparkland.com\">tacolabsparkland.com</a></p>"
           }
         },
         "q_ing": {
@@ -373,7 +373,7 @@
     "location": {
       "type": "location-hours",
       "settings": {
-        "second_url": "https://www.tacolabsfl.com",
+        "second_url": "https://tacolabsparkland.com",
         "only_on": "deals,about,contact,visit-contact"
       }
     }

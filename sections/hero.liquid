@@ -15,7 +15,7 @@
     {%- if bg != blank -%}
       {{ bg | image_url: width: 2400 | image_tag: loading: 'eager', fetchpriority: 'high', sizes: '100vw', widths: '800, 1200, 1600, 2400', alt: bg.alt }}
     {%- else -%}
-      {%- render 'asset-photo', file: section.settings.image_asset, alt: section.settings.image_alt, width: 1192, height: 670, eager: true -%}
+      {%- render 'asset-photo', file: section.settings.image_asset, alt: section.settings.image_alt, width: 2000, height: 1124, eager: true -%}
     {%- endif -%}
   </div>
   <div class="wrap hero__bold">
