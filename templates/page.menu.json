@@ -201,9 +201,20 @@
             "note": "Per person, dine-in only. Order up to 3 tacos per round at the counter.",
             "color": "green"
           }
+        },
+        "monday": {
+          "type": "deal",
+          "settings": {
+            "title": "MARGARITA MONDAY",
+            "when": "Every Monday · Dine-in",
+            "lines": "Original margarita | $2\nAny flavored margarita | $5",
+            "note": "Dine-in only. 21+ with valid ID.",
+            "color": "green"
+          }
         }
       },
       "block_order": [
+        "monday",
         "lunch",
         "tuesday",
         "ayce"

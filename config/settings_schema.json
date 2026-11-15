@@ -67,7 +67,7 @@
         "type": "textarea",
         "id": "hours_text",
         "label": "Hours (footer)",
-        "default": "Tue–Sat 11:30 AM–10 PM\nSun 11:30 AM–9 PM\nClosed Monday"
+        "default": "Mon–Sat 11:30 AM–10 PM\nSun 11:30 AM–9 PM\nOpen 7 days"
       }
     ]
   },

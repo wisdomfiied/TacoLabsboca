@@ -81,7 +81,7 @@ p{margin:0 0 .8em}
 @media (max-width:900px){.hero__grid{grid-template-columns:1fr}.hero__brand img{width:80px;height:80px}}
 
 /* deals */
-.deals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.deals{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
 .deal{background:var(--ink);color:#fff;padding:22px;display:flex;flex-direction:column;gap:8px}
 .deal h3{font-size:32px}
 .deal--coral h3,.deal--coral .deal__price{color:var(--coral)}
