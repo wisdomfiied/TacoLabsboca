@@ -20,7 +20,7 @@
           "settings": {
             "collection": "taco-combos",
             "title": "TACO COMBOS",
-            "price_label": "$14.99",
+            "price_label": "$16.99",
             "note": "Any 3 tacos + chips & salsa. Beef & seafood tacos +50¢ each. Add guac to your chips +$2.49.",
             "color": "yellow",
             "product_type": "Taco Combos"
@@ -31,7 +31,7 @@
           "settings": {
             "collection": "chicken-tacos",
             "title": "CHICKEN TACOS",
-            "price_label": "$4.49",
+            "price_label": "$4.99",
             "note": "",
             "color": "coral",
             "product_type": "Chicken Tacos"
@@ -42,7 +42,7 @@
           "settings": {
             "collection": "veggie-tacos",
             "title": "VEGGIE TACOS",
-            "price_label": "$3.99",
+            "price_label": "$4.25",
             "note": "",
             "color": "green",
             "product_type": "Veggie Tacos"
@@ -53,7 +53,7 @@
           "settings": {
             "collection": "beef-seafood-tacos",
             "title": "BEEF & SEAFOOD TACOS",
-            "price_label": "$4.99",
+            "price_label": "$5.49",
             "note": "",
             "color": "coral",
             "product_type": "Beef & Seafood Tacos"
@@ -65,7 +65,7 @@
             "collection": "burritos-bowls",
             "title": "BURRITOS & BOWLS",
             "price_label": "",
-            "note": "Pick any filling. Chicken & veggie $13.99 · Beef & seafood $15.49. Burritos include chips & salsa.",
+            "note": "Pick your style, then your protein. Chicken or veggie $15.99 · Beef or seafood $17.49. Burritos include chips & salsa. Proteins: Al Pastor, Grilled, Tinga, Birria, Mango Habanero, Hot Honey, New Delhi Tandoori · Bean, Jackfruit Birria, Korean BBQ Tofu · Carne Asada, Birria Beef, Korean BBQ Steak, Beef Brisket, Shrimp, Fish.",
             "color": "yellow",
             "product_type": "Burritos & Bowls"
           }
@@ -76,7 +76,7 @@
             "collection": "quesadillas-specials",
             "title": "QUESADILLAS & SPECIALS",
             "price_label": "",
-            "note": "Quesadilla: chicken & veggie $12.99 · beef & seafood $13.99.",
+            "note": "Quesadilla: chicken or veggie $14.99 · beef or seafood $15.99. Same proteins as burritos & bowls.",
             "color": "coral",
             "product_type": "Quesadillas & Specials"
           }
@@ -142,7 +142,7 @@
             "collection": "drinks",
             "title": "DRINKS",
             "price_label": "",
-            "note": "Fountain soda is self-serve in-store.",
+            "note": "Fountain soda is self-serve in-store. Mexican sodas & Jarritos $3.49.",
             "color": "green",
             "product_type": "Drinks"
           }
@@ -153,9 +153,31 @@
             "collection": "margaritas",
             "title": "MARGARITAS",
             "price_label": "$7.99",
-            "note": "Taco Tuesday: $5 original, $7 flavored. Happy Hour: $5 margaritas (dine-in). 21+.",
+            "note": "Choose your tequila: house included · Teremana +$4.99 · Casamigos +$5.99 · LALO +$6.99 · Patrón +$7.99 · Don Julio +$7.99 · Santo +$7.99. Taco Tuesday: $5 original, $7 flavored. Happy Hour: $5 margaritas. Dine-in, 21+.",
             "color": "coral",
             "product_type": "Margaritas"
+          }
+        },
+        "cat_mojitos": {
+          "type": "category",
+          "settings": {
+            "collection": "mojitos",
+            "title": "MOJITOS",
+            "price_label": "$9.99",
+            "note": "Dine-in, 21+.",
+            "color": "green",
+            "product_type": "Mojitos"
+          }
+        },
+        "cat_beer_wine": {
+          "type": "category",
+          "settings": {
+            "collection": "beer-wine",
+            "title": "BEER & WINE",
+            "price_label": "",
+            "note": "Cold beer $4.99 · Beer Bucket: any 5 beers $20 · Wine by the glass $7.99. Dine-in, 21+.",
+            "color": "yellow",
+            "product_type": "Beer & Wine"
           }
         }
       },
@@ -164,15 +186,17 @@
         "cat_chicken_tacos",
         "cat_veggie_tacos",
         "cat_beef_seafood_tacos",
+        "cat_chips_dips",
         "cat_burritos_bowls",
         "cat_quesadillas_specials",
-        "cat_chips_dips",
         "cat_wings",
-        "cat_sides",
-        "cat_desserts",
-        "cat_kids",
+        "cat_margaritas",
+        "cat_mojitos",
+        "cat_beer_wine",
         "cat_drinks",
-        "cat_margaritas"
+        "cat_sides",
+        "cat_kids",
+        "cat_desserts"
       ],
       "settings": {
         "only_on": "menu"
@@ -192,7 +216,7 @@
           "settings": {
             "title": "LUNCH AT THE LAB",
             "when": "Every open day · 11:30 AM–3 PM",
-            "lines": "2 tacos | $12.99\n3 tacos | $14.99\nBurrito or bowl | $14.99\nAdd small guac (4 oz) | +$2.49",
+            "lines": "2 tacos | $12.99\n3 tacos | $15.99\nBurrito or bowl | $14.99\nAdd small guac (4 oz) | +$2.49",
             "note": "Includes chips, salsa & a fountain drink. Beef & seafood +50¢ per taco, +$1.50 burrito or bowl.",
             "color": "yellow"
           }
@@ -202,7 +226,7 @@
           "settings": {
             "title": "TACO TUESDAY",
             "when": "Dine-in · All day Tuesday",
-            "lines": "Regular tacos (chicken & veggie) | $4\nPremium tacos (beef & seafood) | $5\nOriginal margaritas | $5\nFlavored margaritas | $7",
+            "lines": "Regular tacos (chicken & veggie) | $3\nPremium tacos (beef & seafood) | $4\nOriginal margaritas | $5\nFlavored margaritas | $7",
             "note": "Single tacos only. Dine-in only.",
             "color": "coral"
           }
@@ -222,7 +246,7 @@
           "settings": {
             "title": "ALL YOU CAN EAT",
             "when": "Wednesday & Sunday · Dine-in",
-            "big_price": "$26.99",
+            "big_price": "$24.99",
             "lines": "Unlimited tacos | ✓\nChips & salsa | ✓",
             "note": "Per person, dine-in only. Order up to 3 tacos per round at the counter.",
             "color": "green"
@@ -330,14 +354,14 @@
           "type": "question",
           "settings": {
             "question": "When is Taco Tuesday and Happy Hour?",
-            "answer": "<p>All day Tuesday: $4 regular tacos, $5 premium tacos, $5 original margaritas and $7 flavored margaritas. Happy Hour runs 3–6 PM Wednesday through Sunday: $3 chicken & veggie tacos, $4 beef & seafood tacos and $5 margaritas. Dine-in only.</p>"
+            "answer": "<p>All day Tuesday: $3 regular tacos, $4 premium tacos, $5 original margaritas and $7 flavored margaritas. Happy Hour runs 3–6 PM Wednesday through Sunday: $3 chicken & veggie tacos, $4 beef & seafood tacos and $5 margaritas. Dine-in only.</p>"
           }
         },
         "q5": {
           "type": "question",
           "settings": {
             "question": "How does All You Can Eat work?",
-            "answer": "<p>Wednesday and Sunday, dine-in only, $26.99 per person for unlimited tacos plus chips & salsa. Order up to 3 tacos per round at the counter.</p>"
+            "answer": "<p>Wednesday and Sunday, dine-in only, $24.99 per person for unlimited tacos plus chips & salsa. Order up to 3 tacos per round at the counter.</p>"
           }
         },
         "q6": {

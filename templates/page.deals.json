@@ -12,7 +12,7 @@
           "settings": {
             "title": "LUNCH AT THE LAB",
             "when": "Every open day · 11:30 AM–3 PM",
-            "lines": "2 tacos | $12.99\n3 tacos | $14.99\nBurrito or bowl | $14.99\nAdd small guac (4 oz) | +$2.49",
+            "lines": "2 tacos | $12.99\n3 tacos | $15.99\nBurrito or bowl | $14.99\nAdd small guac (4 oz) | +$2.49",
             "note": "Includes chips, salsa & a fountain drink. Beef & seafood +50¢ per taco, +$1.50 burrito or bowl.",
             "color": "yellow"
           }
@@ -22,7 +22,7 @@
           "settings": {
             "title": "TACO TUESDAY",
             "when": "Dine-in · All day Tuesday",
-            "lines": "Regular tacos (chicken & veggie) | $4\nPremium tacos (beef & seafood) | $5\nOriginal margaritas | $5\nFlavored margaritas | $7",
+            "lines": "Regular tacos (chicken & veggie) | $3\nPremium tacos (beef & seafood) | $4\nOriginal margaritas | $5\nFlavored margaritas | $7",
             "note": "Single tacos only. Dine-in only.",
             "color": "coral"
           }
@@ -42,7 +42,7 @@
           "settings": {
             "title": "ALL YOU CAN EAT",
             "when": "Wednesday & Sunday · Dine-in",
-            "big_price": "$26.99",
+            "big_price": "$24.99",
             "lines": "Unlimited tacos | ✓\nChips & salsa | ✓",
             "note": "Per person, dine-in only. Order up to 3 tacos per round at the counter.",
             "color": "green"

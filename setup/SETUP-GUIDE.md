@@ -19,10 +19,10 @@ Nobody checks out on Shopify, so there is no cart or checkout to set up.
 Online Store → Themes → Add theme → Upload zip file → choose `taco-labs-express-theme.zip`. Don't publish yet.
 
 ### 2. Import the menu
-Products → Import → choose `taco-labs-express-products.csv`. Check "Publish new products to all sales channels". 70 products.
-After import, spot-check 3 items (e.g. Birria Beef Taco $4.99, 3-Taco Combo $14.99, Original Margarita $7.99).
+Products → Import → choose `taco-labs-express-products.csv`. Check "Publish new products to all sales channels" **and "Overwrite products with matching handles"** (needed for price updates). 87 rows: 85 live items, 2 retired as drafts (Chicken Fil A Taco, Spicy Margarita).
+After import, spot-check 3 items (e.g. Birria Beef Taco $5.49, 3-Taco Combo $16.99, Original Margarita $7.99).
 
-### 3. Create 14 collections (optional, recommended)
+### 3. Create 16 collections (add `mojitos` and `beer-wine` for the Nov 2026 menu) (optional, recommended)
 The menu page and Fan Favorites already work without collections: the theme groups items by product type and tag. Collections add category pages (/collections/chicken-tacos) and let you reorder items by dragging.
 Products → Collections → Create collection. Type = **Smart**, condition **Product type is equal to** the type below.
 Keep the title exactly as written so the web address (handle) matches the theme. Sort: **Manually** (items then show in menu order; drag to adjust).
@@ -81,9 +81,9 @@ Settings → Domains → Connect existing domain → `boca.tacolabsfl.com`. At y
 ### 9. SEO (Online Store → Preferences, and each page's "Search engine listing")
 | Page | Title | Description |
 |---|---|---|
-| Home | Taco Labs Express – Tacos in Downtown Boca Raton | 20 globally inspired tacos from $3.99 at 1956 NE 5th Ave, Boca Raton. Birria, al pastor, Korean BBQ and more. Order pickup online. |
-| Menu | Menu – Taco Labs Express Boca Raton | Full menu with prices: tacos from $3.99, 3-taco combo $14.99, burritos, bowls, Quesa Birria, wings, margaritas. |
-| Deals | Taco Tuesday, Happy Hour & AYCE – Taco Labs Express | $4 regular tacos, $5 premium tacos, $5 original margaritas and $7 flavored margaritas on Taco Tuesday (dine-in), lunch combos from $9.99, All You Can Eat $26.99. |
+| Home | Taco Labs Express – Tacos in Downtown Boca Raton | 20 globally inspired tacos from $4.25 at 1956 NE 5th Ave, Boca Raton. Birria, al pastor, Korean BBQ and more. Order pickup online. |
+| Menu | Menu – Taco Labs Express Boca Raton | Full menu with prices: tacos from $4.25, 3-taco combo $16.99, burritos, bowls, Quesa Birria, wings, margaritas. |
+| Deals | Taco Tuesday, Happy Hour & AYCE – Taco Labs Express | $3 regular tacos, $4 premium tacos, $5 original margaritas and $7 flavored margaritas on Taco Tuesday (dine-in), lunch combos from $9.99, All You Can Eat $26.99. |
 | About | About Taco Labs Express Boca | Fast-casual, globally inspired tacos in downtown Boca Raton. |
 | Visit & Contact | Hours & Location – Taco Labs Express Boca | 1956 NE 5th Ave, Suite 3, Boca Raton. Mon–Sat 11:30 AM–10 PM, Sun 11:30 AM–9 PM, open 7 days. (561) 961-0585. |
 | FAQ | FAQ – Taco Labs Express | Ordering, gluten-friendly options, vegetarian tacos, deals and catering. |
@@ -113,3 +113,10 @@ Homepage hero: uses your built-in tacos photo. To replace it: Customize → Hero
 3. The Parkland ZIP code (33067 or 33073) for the Kitchen & Bar card.
 4. Rename your Google Business Profile from "Taco Labs - Kitchen & Bar (East Boca)" to "Taco Labs Express Boca".
 5. Update your Toast online ordering menu to the Express menu (it still shows Loaded Birria Fries, wings without prices and a broken Directions link).
+
+
+## Nov 2026 menu update
+Prices, names and descriptions live in Shopify products, not in this theme. After pulling this update:
+1. Products → Import → `setup/taco-labs-express-products.csv` with **Overwrite products with matching handles** checked.
+2. Create collections `mojitos` (type = Mojitos) and `beer-wine` (type = Beer & Wine), or leave them empty: the Menu section falls back to product type.
+3. Update Toast pickup, Uber Eats and DoorDash separately; they do not read this store.
