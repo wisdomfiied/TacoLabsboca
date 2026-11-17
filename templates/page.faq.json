@@ -39,14 +39,14 @@
           "type": "question",
           "settings": {
             "question": "When is Taco Tuesday and Happy Hour?",
-            "answer": "<p>All day Tuesday and 3–6 PM Wednesday through Sunday: $3 chicken & veggie tacos, $4 beef & seafood tacos and $5 margaritas. Dine-in only.</p>"
+            "answer": "<p>All day Tuesday: $4 regular tacos, $5 premium tacos, $5 original margaritas and $7 flavored margaritas. Happy Hour runs 3–6 PM Wednesday through Sunday: $3 chicken & veggie tacos, $4 beef & seafood tacos and $5 margaritas. Dine-in only.</p>"
           }
         },
         "q5": {
           "type": "question",
           "settings": {
             "question": "How does All You Can Eat work?",
-            "answer": "<p>Wednesday and Sunday, dine-in only, $24.99 per person for unlimited tacos plus chips & salsa. Order up to 3 tacos per round at the counter.</p>"
+            "answer": "<p>Wednesday and Sunday, dine-in only, $26.99 per person for unlimited tacos plus chips & salsa. Order up to 3 tacos per round at the counter.</p>"
           }
         },
         "q6": {

@@ -2,7 +2,7 @@
   "type": "header",
   "name": "Header group",
   "sections": {
-    "announcement": {"type": "announcement-bar", "settings": {"text": "Margarita Monday: $2 margaritas · Taco Tuesday: $3 & $4 tacos · Dine-in", "link": "/pages/deals"}},
+    "announcement": {"type": "announcement-bar", "settings": {"text": "Margarita Monday: $2 margaritas · Taco Tuesday: $4 regular tacos, $5 premium tacos, $5 original margaritas and $7 flavored margaritas · Dine-in", "link": "/pages/deals"}},
     "header": {"type": "header", "settings": {"menu": "main-menu"}}
   },
   "order": ["announcement", "header"]

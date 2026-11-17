@@ -83,7 +83,7 @@ Settings → Domains → Connect existing domain → `boca.tacolabsfl.com`. At y
 |---|---|---|
 | Home | Taco Labs Express – Tacos in Downtown Boca Raton | 20 globally inspired tacos from $3.99 at 1956 NE 5th Ave, Boca Raton. Birria, al pastor, Korean BBQ and more. Order pickup online. |
 | Menu | Menu – Taco Labs Express Boca Raton | Full menu with prices: tacos from $3.99, 3-taco combo $14.99, burritos, bowls, Quesa Birria, wings, margaritas. |
-| Deals | Taco Tuesday, Happy Hour & AYCE – Taco Labs Express | $3 & $4 tacos and $5 margaritas on Taco Tuesday and Happy Hour (dine-in), lunch combos from $9.99, All You Can Eat $24.99. |
+| Deals | Taco Tuesday, Happy Hour & AYCE – Taco Labs Express | $4 regular tacos, $5 premium tacos, $5 original margaritas and $7 flavored margaritas on Taco Tuesday (dine-in), lunch combos from $9.99, All You Can Eat $26.99. |
 | About | About Taco Labs Express Boca | Fast-casual, globally inspired tacos in downtown Boca Raton. |
 | Visit & Contact | Hours & Location – Taco Labs Express Boca | 1956 NE 5th Ave, Suite 3, Boca Raton. Mon–Sat 11:30 AM–10 PM, Sun 11:30 AM–9 PM, open 7 days. (561) 961-0585. |
 | FAQ | FAQ – Taco Labs Express | Ordering, gluten-friendly options, vegetarian tacos, deals and catering. |
